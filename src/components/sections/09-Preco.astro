@@ -120,7 +120,7 @@ function getStatus(loteNum: number): 'ativo' | 'aguardando' | 'esgotado' {
     margin-bottom: 0.75rem;
     font-weight: 700;
   }
-  .preco__ancoragem-table { width: 100%; border-collapse: collapse; min-width: 600px; }
+  .preco__ancoragem-table { width: 100%; border-collapse: collapse; }
   .preco__ancoragem-table td {
     padding: 0.75rem 0.5rem;
     font-size: 0.9rem;
@@ -130,6 +130,30 @@ function getStatus(loteNum: number): 'ativo' | 'aguardando' | 'esgotado' {
   .preco__ancoragem-table tr:last-child td { border-bottom: none; }
   .preco__ancoragem-destaque td { color: var(--color-black); font-weight: 500; background: var(--color-mint-bg); }
   .preco__ancoragem-destaque td strong { color: var(--color-mint-dark); }
+
+  /* Mobile: stack das colunas em cards */
+  @media (max-width: 720px) {
+    .preco__ancoragem-table,
+    .preco__ancoragem-table tbody,
+    .preco__ancoragem-table tr,
+    .preco__ancoragem-table td { display: block; width: 100%; }
+    .preco__ancoragem-table tr {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--color-gray-2);
+    }
+    .preco__ancoragem-table tr:last-child { border-bottom: none; }
+    .preco__ancoragem-table td {
+      padding: 0.25rem 0;
+      border-bottom: none;
+    }
+    .preco__ancoragem-table td:first-child { font-weight: 600; color: var(--color-black); }
+    .preco__ancoragem-destaque {
+      background: var(--color-mint-bg);
+      border-radius: var(--radius-md);
+      padding: 0.75rem !important;
+      margin-block: 0.5rem;
+    }
+  }
 
   .preco__lotes {
     display: grid;
