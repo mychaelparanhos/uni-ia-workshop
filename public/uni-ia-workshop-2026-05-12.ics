@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//UNI IA//Workshop//PT-BR
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:uni-ia-workshop-2026-05-12@uniia.com.br
+DTSTAMP:20260505T000000Z
+DTSTART:20260512T220000Z
+DTEND:20260513T010000Z
+SUMMARY:Workshop UNI IA — Calendário Fechado em 3 Horas
+DESCRIPTION:30 dias de conteúdo profissional em 3 horas. Presencial em Lourdes, BH. Levar notebook + briefing de 1 página.
+LOCATION:Espaço UNI IA, Rua dos Aimorés 2244, Lourdes, Belo Horizonte, MG, 30140-074
+URL:https://uni-ia-workshop.vercel.app
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR

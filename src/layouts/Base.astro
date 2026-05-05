@@ -1,0 +1,150 @@
+---
+import { getEntry } from 'astro:content';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  hideFooter?: boolean;
+  showHeader?: boolean;
+}
+
+const {
+  title = 'Workshop UNI IA — 30 dias de conteúdo profissional em 3 horas · BH',
+  description = 'Aplique IA com método e saia com 30 dias de conteúdo profissional. Workshop presencial em Belo Horizonte, terça à noite, R$ 47 no Lote 1.',
+  ogImage = '/og-image.png',
+  hideFooter = false,
+  showHeader = true,
+} = Astro.props;
+
+const SITE_URL = (import.meta.env.PUBLIC_SITE_URL || 'https://uni-ia-workshop.vercel.app').replace(/\/$/, '');
+const canonicalURL = new URL(Astro.url.pathname, SITE_URL).toString();
+const ogImageURL = new URL(ogImage, SITE_URL).toString();
+
+const GTM_ID = import.meta.env.PUBLIC_GTM_ID;
+const META_PIXEL_ID = import.meta.env.PUBLIC_META_PIXEL_ID;
+
+// Schema.org Event JSON-LD — consome workshop.ts e PUBLIC_LOTE_ATIVO
+const data = await getEntry('workshop', 'main');
+const w = data!.data;
+const loteAtivoNum = parseInt(import.meta.env.PUBLIC_LOTE_ATIVO || '1', 10);
+const loteAtivo = w.preco.lotes.find((l) => l.numero === loteAtivoNum) || w.preco.lotes[0]!;
+
+const schemaEvent = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: 'Workshop UNI IA — Calendário Fechado em 3 Horas',
+  description,
+  startDate: w.workshop.date,
+  endDate: w.workshop.date.replace('T19:', 'T22:'),
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  eventStatus: 'https://schema.org/EventScheduled',
+  location: {
+    '@type': 'Place',
+    name: 'Espaço UNI IA',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: w.workshop.address,
+      addressLocality: w.workshop.addressLocality,
+      addressRegion: w.workshop.addressRegion,
+      postalCode: w.workshop.postalCode,
+      addressCountry: 'BR',
+    },
+  },
+  image: [ogImageURL],
+  organizer: {
+    '@type': 'Organization',
+    name: 'UNI IA',
+    url: SITE_URL,
+  },
+  performer: {
+    '@type': 'Person',
+    name: 'Mychael Paranhos',
+  },
+  offers: {
+    '@type': 'Offer',
+    name: `Lote ${loteAtivo.numero} — ${loteAtivo.nome}`,
+    price: loteAtivo.preco_individual.toFixed(2),
+    priceCurrency: 'BRL',
+    availability: 'https://schema.org/InStock',
+    url: canonicalURL,
+    validFrom: '2026-04-15T00:00:00-03:00',
+  },
+  maximumAttendeeCapacity: w.workshop.capacity,
+};
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#0A0A0A" />
+
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="UNI IA" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <link rel="preload" href="/fonts/Inter-Black.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/InstrumentSerif-Italic.woff2" as="font" type="font/woff2" crossorigin />
+
+    <script type="application/ld+json" set:html={JSON.stringify(schemaEvent)} />
+
+    {GTM_ID && (
+      <script is:inline define:vars={{ GTM_ID }}>
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer',GTM_ID);
+      </script>
+    )}
+
+    {META_PIXEL_ID && (
+      <script is:inline define:vars={{ META_PIXEL_ID }}>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',META_PIXEL_ID);fbq('track','PageView');
+      </script>
+    )}
+
+    <script is:inline>
+      // dataLayer init + event delegation pra [data-track]
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({ event: 'page_view' });
+      document.addEventListener('click', function (e) {
+        const target = e.target instanceof Element ? e.target.closest('[data-track]') : null;
+        if (!target) return;
+        const trackEvent = target.getAttribute('data-track');
+        if (!trackEvent) return;
+        window.dataLayer.push({ event: trackEvent });
+      }, { capture: true });
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#preco">Pular pro preço</a>
+    {showHeader && <Header />}
+    <main id="main">
+      <slot />
+    </main>
+    {!hideFooter && <Footer />}
+
+    <script>
+      import '../scripts/reveal.ts';
+      import '../scripts/header.ts';
+      import '../scripts/faq.ts';
+      import '../scripts/scroll-milestones.ts';
+    </script>
+  </body>
+</html>

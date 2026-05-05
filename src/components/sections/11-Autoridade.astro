@@ -1,0 +1,97 @@
+---
+import Section from '../primitives/Section.astro';
+import Heading from '../primitives/Heading.astro';
+import Accent from '../primitives/Accent.astro';
+import { getEntry } from 'astro:content';
+
+const data = await getEntry('workshop', 'main');
+const w = data!.data.autoridade;
+---
+<Section id="autoridade" mode="editorial">
+  <p class="eyebrow fade-up">{w.eyebrow}</p>
+  <Heading level={2} class="fade-up">
+    {w.headlinePre} <Accent>{w.accent}</Accent>{w.headlinePost}
+  </Heading>
+
+  <div class="autoridade__grid">
+    <div class="autoridade__photo fade-up" aria-hidden="true">
+      <svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mychael Paranhos — placeholder">
+        <defs>
+          <linearGradient id="bg-myc" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1A1A1A"/>
+            <stop offset="100%" stop-color="#0A0A0A"/>
+          </linearGradient>
+        </defs>
+        <rect width="240" height="240" fill="url(#bg-myc)"/>
+        <ellipse cx="120" cy="100" rx="38" ry="44" fill="#3A3A3A"/>
+        <path d="M 60 240 Q 60 160 120 150 Q 180 160 180 240 Z" fill="#2A2A2A"/>
+        <ellipse cx="108" cy="92" rx="14" ry="22" fill="#5A5A5A" opacity="0.7"/>
+        <polygon points="180,200 210,200 195,228" fill="#00E5A0"/>
+        <text x="120" y="232" font-family="JetBrains Mono, monospace" font-size="8" fill="#8E8E93" text-anchor="middle">MYCHAEL · PLACEHOLDER</text>
+      </svg>
+    </div>
+
+    <div class="autoridade__text">
+      <h3 class="autoridade__sub fade-up">Quem eu sou</h3>
+      <p class="fade-up">{w.quemSou}</p>
+
+      <h3 class="autoridade__sub fade-up">Resultados</h3>
+      <p class="fade-up">{w.resultados}</p>
+
+      <h3 class="autoridade__sub fade-up">Por que estou fazendo isso</h3>
+      <p class="fade-up">{w.porQue}</p>
+
+      <p class="autoridade__nome fade-up">
+        <strong>{w.nome}</strong>
+        <em>{w.cargo}</em>
+      </p>
+    </div>
+  </div>
+</Section>
+
+<style>
+  .autoridade__grid {
+    display: grid;
+    gap: 2.5rem;
+    margin-top: 2rem;
+    align-items: start;
+  }
+  @media (min-width: 768px) {
+    .autoridade__grid { grid-template-columns: 240px 1fr; gap: 3rem; }
+  }
+  .autoridade__photo {
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--color-gray-1);
+  }
+  .autoridade__photo svg { width: 100%; height: 100%; display: block; }
+  .autoridade__sub {
+    font-size: 1rem;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-mint-dark);
+    margin: 1.5rem 0 0.5rem;
+    font-weight: 700;
+  }
+  .autoridade__sub:first-child { margin-top: 0; }
+  .autoridade__text p {
+    font-size: 1rem;
+    color: var(--color-gray-5);
+    line-height: 1.65;
+    margin-bottom: 0.5rem;
+  }
+  .autoridade__nome {
+    margin-top: 1.5rem !important;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-gray-2);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .autoridade__nome strong { color: var(--color-black); font-size: 1.0625rem; }
+  .autoridade__nome em { color: var(--color-gray-4); font-style: italic; font-size: 0.9rem; }
+</style>

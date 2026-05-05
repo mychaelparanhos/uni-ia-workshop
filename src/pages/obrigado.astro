@@ -1,0 +1,162 @@
+---
+import Base from '../layouts/Base.astro';
+import Heading from '../components/primitives/Heading.astro';
+import Accent from '../components/primitives/Accent.astro';
+import CheckIcon from '../components/primitives/CheckIcon.astro';
+import CTAButton from '../components/primitives/CTAButton.astro';
+import { getEntry } from 'astro:content';
+
+const data = await getEntry('workshop', 'main');
+const w = data!.data.workshop;
+const whatsappNumber = (import.meta.env.PUBLIC_WHATSAPP_NUMBER || '+5531999999999').replace(/\D/g, '');
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Acabei de pedir vaga no Workshop UNI IA — quando recebo o Pix?')}`;
+---
+<Base
+  title="Recebido — Workshop UNI IA"
+  description="Sua intenção de vaga foi registrada. Próximo passo: WhatsApp + Pix."
+  showHeader={false}
+>
+  <section data-mode="matrix" class="obrigado">
+    <div class="container">
+      <p class="eyebrow">vaga registrada</p>
+      <Heading level={1}>
+        Recebido. Sua vaga tá <Accent>quase</Accent> confirmada.
+      </Heading>
+      <p class="obrigado__sub">
+        Agora é o último passo — rápido. Em ordem:
+      </p>
+
+      <ol class="obrigado__steps">
+        <li>
+          <span class="obrigado__step-num">1</span>
+          <div>
+            <h3>WhatsApp em até 30 minutos</h3>
+            <p>Mychael te manda o Pix de R$ 47 (ou R$ 70 se for dupla) pelo WhatsApp. Pague e mande o comprovante na mesma conversa.</p>
+          </div>
+        </li>
+        <li>
+          <span class="obrigado__step-num">2</span>
+          <div>
+            <h3>Confirmação por e-mail</h3>
+            <p>Após pagamento, você recebe um e-mail com: briefing template (1 página, 10 minutos pra preencher), endereço completo, e o que levar.</p>
+          </div>
+        </li>
+        <li>
+          <span class="obrigado__step-num">3</span>
+          <div>
+            <h3>Salve a data</h3>
+            <p>{w.dateBR} · {w.timeStart} às {w.timeEnd} · {w.address}, {w.addressLocality}/{w.addressRegion}.</p>
+            <p><a href="/uni-ia-workshop-2026-05-12.ics" class="obrigado__ics" download>Baixar evento (.ics)</a> — adiciona automaticamente no Google Calendar, Apple Calendar, Outlook.</p>
+          </div>
+        </li>
+      </ol>
+
+      <div class="obrigado__checklist card">
+        <h3 class="obrigado__check-title">Checklist da noite</h3>
+        <ul class="unstyled">
+          <li><CheckIcon size={18} /> Notebook carregado</li>
+          <li><CheckIcon size={18} /> Briefing de 1 página preenchido (template no e-mail)</li>
+          <li><CheckIcon size={18} /> Comprovante de pagamento</li>
+          <li><CheckIcon size={18} /> Cabeça aberta pra produzir 30 dias em 3 horas</li>
+        </ul>
+      </div>
+
+      <div class="obrigado__cta">
+        <CTAButton href={whatsappUrl} size="lg" variant="primary" track="whatsapp_click">
+          Abrir WhatsApp agora →
+        </CTAButton>
+        <a href="/" class="obrigado__back">Voltar pra LP</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .obrigado { min-height: 100vh; padding-block: 5rem; }
+  .obrigado .container { max-width: 760px; }
+  .obrigado__sub {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.75);
+    margin: 1.5rem 0 2.5rem;
+  }
+  .obrigado__steps {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  .obrigado__steps li {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+  }
+  .obrigado__step-num {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    background: var(--color-mint);
+    color: var(--color-black);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-family: var(--font-display);
+  }
+  .obrigado__steps h3 {
+    font-size: 1.25rem;
+    color: white;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+  .obrigado__steps p {
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+  .obrigado__ics {
+    color: var(--color-mint);
+    border-bottom: 1px solid var(--color-mint);
+    padding-bottom: 1px;
+  }
+  .obrigado__checklist {
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.1);
+    padding: 1.75rem;
+    margin: 2.5rem 0;
+  }
+  .obrigado__check-title {
+    color: var(--color-mint);
+    font-size: 1rem;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 1rem;
+  }
+  .obrigado__checklist ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .obrigado__checklist li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(255,255,255,0.92);
+  }
+  .obrigado__cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .obrigado__back {
+    color: var(--color-gray-4);
+    font-size: 0.9rem;
+    text-decoration: underline;
+  }
+  .obrigado__back:hover { color: var(--color-mint); }
+</style>

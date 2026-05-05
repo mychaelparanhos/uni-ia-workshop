@@ -1,0 +1,35 @@
+name: Lighthouse CI (informacional)
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    continue-on-error: true # informacional, não bloqueia merge
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        env:
+          PUBLIC_SITE_URL: https://uni-ia-workshop.vercel.app
+          PUBLIC_CHECKOUT_URL: https://wa.me/5531999999999?text=Quero%20vaga
+          PUBLIC_WHATSAPP_NUMBER: "+5531999999999"
+          PUBLIC_LOTE_ATIVO: "1"
+        run: npm run build
+
+      - name: Run Lighthouse CI
+        run: |
+          npm install -g @lhci/cli
+          lhci autorun --upload.target=temporary-public-storage
+        continue-on-error: true

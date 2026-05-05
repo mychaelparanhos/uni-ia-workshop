@@ -1,0 +1,92 @@
+---
+import Section from '../primitives/Section.astro';
+import Heading from '../primitives/Heading.astro';
+import Accent from '../primitives/Accent.astro';
+import CheckIcon from '../primitives/CheckIcon.astro';
+import { getEntry } from 'astro:content';
+
+const data = await getEntry('workshop', 'main');
+const w = data!.data.garantia;
+---
+<Section id="garantia" mode="editorial">
+  <p class="eyebrow fade-up">{w.eyebrow}</p>
+  <Heading level={2} class="fade-up">
+    {w.headlinePre} <Accent>{w.accent}</Accent>{w.headlinePost}
+  </Heading>
+
+  <div class="garantia__blocos">
+    <p class="fade-up">{w.bloco1}</p>
+    <p class="fade-up">{w.bloco2}</p>
+  </div>
+
+  <div class="garantia__selo fade-up">
+    <h3 class="garantia__selo-title">{w.seloTitulo}</h3>
+    <ul class="unstyled garantia__selo-cond">
+      {w.seloCondicoes.map((c) => (
+        <li><CheckIcon size={18} /> <span>{c}</span></li>
+      ))}
+    </ul>
+    <p class="garantia__selo-pergunta">{w.seloPergunta}</p>
+    <ul class="unstyled garantia__selo-opts">
+      {w.seloOpcoes.map((o) => <li>{o}</li>)}
+    </ul>
+  </div>
+</Section>
+
+<style>
+  .garantia__blocos {
+    margin: 2rem 0;
+    max-width: 880px;
+  }
+  .garantia__blocos p {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--color-gray-5);
+    margin-bottom: 1rem;
+  }
+  .garantia__selo {
+    background: white;
+    border: 2px solid var(--color-mint);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: var(--shadow-mint);
+    max-width: 700px;
+  }
+  .garantia__selo-title {
+    color: var(--color-mint-dark);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .garantia__selo-cond {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .garantia__selo-cond li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1rem;
+    color: var(--color-black);
+  }
+  .garantia__selo-pergunta {
+    font-weight: 700;
+    color: var(--color-black);
+    margin: 1rem 0 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-gray-2);
+  }
+  .garantia__selo-opts {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .garantia__selo-opts li {
+    font-size: 0.95rem;
+    color: var(--color-gray-5);
+    padding-left: 1rem;
+    border-left: 2px solid var(--color-mint);
+  }
+</style>

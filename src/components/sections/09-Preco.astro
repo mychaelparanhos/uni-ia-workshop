@@ -1,0 +1,223 @@
+---
+import Section from '../primitives/Section.astro';
+import Heading from '../primitives/Heading.astro';
+import Accent from '../primitives/Accent.astro';
+import CTAButton from '../primitives/CTAButton.astro';
+import Pill from '../primitives/Pill.astro';
+import { getEntry } from 'astro:content';
+
+const data = await getEntry('workshop', 'main');
+const w = data!.data.preco;
+const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL;
+const loteAtivoNum = parseInt(import.meta.env.PUBLIC_LOTE_ATIVO || '1', 10);
+
+function getStatus(loteNum: number): 'ativo' | 'aguardando' | 'esgotado' {
+  if (loteNum === loteAtivoNum) return 'ativo';
+  if (loteNum < loteAtivoNum) return 'esgotado';
+  return 'aguardando';
+}
+---
+<Section id="preco" mode="editorial">
+  <p class="eyebrow fade-up">{w.eyebrow}</p>
+  <Heading level={2} class="fade-up">
+    {w.headlinePre} <Accent>{w.accent}</Accent> {w.headlinePost}
+  </Heading>
+
+  <div class="preco__ancoragem fade-up">
+    <p class="preco__ancoragem-title">Ancoragem externa</p>
+    <table class="preco__ancoragem-table">
+      <tbody>
+        {w.ancoragem.map((linha) => (
+          <tr class={linha.destaque ? 'preco__ancoragem-destaque' : ''}>
+            <td><strong>{linha.curso}</strong></td>
+            <td>{linha.valor}</td>
+            <td>{linha.entrega}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="preco__lotes">
+    {w.lotes.map((lote) => {
+      const status = getStatus(lote.numero);
+      const ativo = status === 'ativo';
+      return (
+        <article class={`preco__lote ${ativo ? 'preco__lote--ativo' : 'preco__lote--inativo'} fade-up`}>
+          <div class="preco__lote-head">
+            <span class="preco__lote-num">Lote {lote.numero}</span>
+            <Pill status={status} />
+          </div>
+          <h3 class="preco__lote-nome">{lote.nome}</h3>
+          <ul class="preco__lote-info unstyled">
+            <li><strong>{lote.vagas}</strong> vagas</li>
+            <li><strong>{lote.preco_individual_str}</strong> individual</li>
+            <li>ou <strong>{lote.preco_dupla_str}</strong> em dupla ({lote.preco_cada_str})</li>
+          </ul>
+          <p class="preco__lote-legenda"><em>{lote.legenda}</em></p>
+          {ativo ? (
+            <CTAButton
+              href={checkoutUrl}
+              size="lg"
+              variant="primary"
+              track="cta_preco_click"
+              ariaLabel={w.ctaLabel}
+              class="preco__lote-cta"
+            >
+              {w.ctaLabel}
+            </CTAButton>
+          ) : (
+            <span class="preco__lote-disabled">{status === 'esgotado' ? 'Encerrado' : 'Em breve'}</span>
+          )}
+        </article>
+      );
+    })}
+  </div>
+
+  <div class="preco__dupla fade-up">
+    <h3 class="preco__dupla-title">{w.dupla.titulo}</h3>
+    <p>{w.dupla.explicacao}</p>
+    <p>No Lote 1: você + uma colega = <strong>R$ 70 total (R$ 35 cada)</strong>.</p>
+    <p class="preco__dupla-legenda">{w.dupla.legenda}</p>
+    <CTAButton
+      href={checkoutUrl}
+      size="md"
+      variant="secondary"
+      track="cta_dupla_click"
+      ariaLabel={w.dupla.ctaLabel}
+    >
+      {w.dupla.ctaLabel}
+    </CTAButton>
+  </div>
+
+  <div class="preco__cta-bottom fade-up">
+    <CTAButton
+      href={checkoutUrl}
+      size="xl"
+      variant="primary"
+      track="cta_preco_click"
+      ariaLabel={w.ctaLabel}
+    >
+      {w.ctaLabel}
+    </CTAButton>
+  </div>
+</Section>
+
+<style>
+  .preco__ancoragem {
+    margin: 2.5rem 0;
+    padding: 1.5rem;
+    background: var(--color-gray-1);
+    border-radius: var(--radius-lg);
+    overflow-x: auto;
+  }
+  .preco__ancoragem-title {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-mint-dark);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+  }
+  .preco__ancoragem-table { width: 100%; border-collapse: collapse; min-width: 600px; }
+  .preco__ancoragem-table td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.9rem;
+    color: var(--color-gray-5);
+    border-bottom: 1px solid var(--color-gray-2);
+  }
+  .preco__ancoragem-table tr:last-child td { border-bottom: none; }
+  .preco__ancoragem-destaque td { color: var(--color-black); font-weight: 500; background: var(--color-mint-bg); }
+  .preco__ancoragem-destaque td strong { color: var(--color-mint-dark); }
+
+  .preco__lotes {
+    display: grid;
+    gap: 1.25rem;
+    margin: 2rem 0;
+  }
+  @media (min-width: 1024px) { .preco__lotes { grid-template-columns: repeat(3, 1fr); } }
+
+  .preco__lote {
+    background: white;
+    border: 1px solid var(--color-gray-2);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .preco__lote--ativo {
+    border: 2px solid var(--color-mint);
+    box-shadow: var(--shadow-mint);
+    transform: translateY(-4px);
+  }
+  .preco__lote--inativo {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+  .preco__lote-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .preco__lote-num {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-gray-4);
+    font-weight: 700;
+  }
+  .preco__lote-nome {
+    font-size: 1.5rem;
+    color: var(--color-black);
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  .preco__lote-info { display: flex; flex-direction: column; gap: 0.25rem; font-size: 0.95rem; color: var(--color-gray-5); }
+  .preco__lote-info strong { color: var(--color-black); }
+  .preco__lote-legenda { font-size: 0.85rem; color: var(--color-gray-4); }
+  .preco__lote-cta { margin-top: auto; }
+  .preco__lote-disabled {
+    margin-top: auto;
+    text-align: center;
+    padding: 1rem;
+    background: var(--color-gray-1);
+    border-radius: var(--radius-md);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-gray-4);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .preco__dupla {
+    margin: 2.5rem 0;
+    padding: 2rem;
+    background: var(--color-mint-bg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-mint-border);
+  }
+  .preco__dupla-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-black);
+  }
+  .preco__dupla p {
+    color: var(--color-gray-5);
+    margin-bottom: 0.75rem;
+    line-height: 1.55;
+  }
+  .preco__dupla strong { color: var(--color-black); }
+  .preco__dupla-legenda {
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem !important;
+  }
+
+  .preco__cta-bottom {
+    text-align: center;
+    margin-top: 2rem;
+  }
+</style>

@@ -1,0 +1,371 @@
+{
+  "workshop": {
+    "date": "2026-05-12T19:00:00-03:00",
+    "dateBR": "12 de maio de 2026 · terça-feira",
+    "timeStart": "19h00",
+    "timeEnd": "22h00",
+    "address": "Rua dos Aimorés, 2244, Lourdes",
+    "addressLocality": "Belo Horizonte",
+    "addressRegion": "MG",
+    "postalCode": "30140-074",
+    "capacity": 20
+  },
+  "hero": {
+    "headline": "30 dias de conteúdo",
+    "accent": "profissional",
+    "headlineAfter": ". 3 horas. Presencial em BH.",
+    "subheadline": "Aplique o Método Calendário Fechado direto no seu cliente real, com gente do lado quando travar — sem programar, sem teoria infinita, sem aplicar depois.",
+    "bullets": [
+      "Sem programar",
+      "Sai com pronto",
+      "Aplica quarta de manhã"
+    ],
+    "ctaLabel": "Garantir vaga · R$ 47"
+  },
+  "provas": {
+    "eyebrow": "prova social",
+    "headlinePre": "Quem ensina o Método já levou cliente de R$250k a",
+    "accent": "R$3 milhões",
+    "headlinePost": "em 1 ano — 100% com estratégia digital.",
+    "subheadline": "E o mesmo método aplicado nesse caso cabe numa noite de terça em Lourdes — pra você sair com 30 dias do SEU cliente real.",
+    "credenciais": [
+      { "titulo": "R$250k → R$3M em 12 meses", "descricao": "Safe & Araújo Advogados, 100% online" },
+      { "titulo": "50+ empresas atendidas", "descricao": "Backend Digital · 7 dígitos" },
+      { "titulo": "Consultor de IA aplicada desde 2023", "descricao": "não 2025/2026" }
+    ]
+  },
+  "problema": {
+    "eyebrow": "problema · dor · causa",
+    "headlinePre": "Você abre o ChatGPT, pede ajuda com legenda, e o que sai é morno.",
+    "accent": "De novo",
+    "subheadline": "Tem medo de chegar em 2028 sendo a pessoa que ficou pra trás, e fica pensando:",
+    "autocriticas": [
+      "\"Salvei 200 posts e apliquei 5.\"",
+      "\"Tô há 1 ano e meio fingindo que sei.\"",
+      "\"Tá saindo raso. Tá saindo igual.\"",
+      "\"Vejo colega chegando com GPT customizado.\""
+    ],
+    "medos": [
+      "\"E se eu chegar em 2028 sendo o(a) que ficou pra trás?\"",
+      "\"E se a chefia me trocar por alguém que aplica?\"",
+      "\"Cada mês que passa é um mês a menos no relógio.\""
+    ]
+  },
+  "passo": {
+    "eyebrow": "passo a passo",
+    "headlinePre": "Esses são os 3 momentos da sala.",
+    "accent": "Uma terça à noite",
+    "headlinePost": "vira 30 dias na mão.",
+    "momentos": [
+      {
+        "numero": 1,
+        "titulo": "Destravar",
+        "horario": "19h-20h",
+        "subheadline": "Você descobre, nos primeiros 50 minutos, que o problema nunca foi a ferramenta. Era método. Sai do primeiro momento com um post profissional na sua tela — feito por você, no seu cliente real.",
+        "saiCom": "1 post profissional na tela"
+      },
+      {
+        "numero": 2,
+        "titulo": "Aplicar",
+        "horario": "20h-21h",
+        "subheadline": "Aqui o tempo se divide por 24. Você produz 1 post, depois 10, depois o calendário toma forma — porque alguém do lado corrige na hora. A objeção \"3 horas é pouco\" se quebra silenciosa, porque você está vendo acontecer.",
+        "saiCom": "Calendário tomando forma"
+      },
+      {
+        "numero": 3,
+        "titulo": "Sair com a mão cheia",
+        "horario": "21h-22h",
+        "subheadline": "Cada participante vira a tela e mostra o calendário fechado. Você vê os outros notebooks com calendário pronto igual ao seu. Sai com 30 dias no Drive, contato dos colegas e a clareza nova de pra onde IA pode levar sua carreira.",
+        "saiCom": "30 dias fechados no Drive"
+      }
+    ]
+  },
+  "entregaveis": {
+    "eyebrow": "stack · valor R$ 980",
+    "headline": "Veja tudo que entra numa noite de terça em Lourdes — pra você sair com 30 dias na mão.",
+    "cards": [
+      {
+        "titulo": "Workshop Calendário Fechado (3h Presencial)",
+        "promessa": "Aprenda o Método Calendário Fechado em 3h presenciais e produza com IA na frente de quem corrige na hora.",
+        "descricao": "3 horas presenciais com Mychael circulando pela sala. Você produz, alguém do lado corrige na hora — não é vídeo gravado, é correção ao vivo.",
+        "valor": "R$ 350",
+        "valorNum": 350
+      },
+      {
+        "titulo": "Calendário de 30 Dias (produzido na sala)",
+        "promessa": "Saia da sala com 30 dias de conteúdo fechado no seu Drive — pronto pra publicar amanhã, no seu cliente real.",
+        "descricao": "O que normalmente leva 3 dias no manual sai pronto numa terça à noite. Quarta de manhã você publica o primeiro.",
+        "valor": "R$ 400",
+        "valorNum": 400
+      },
+      {
+        "titulo": "Kit de Bordo (materiais de apoio)",
+        "promessa": "Use 20+ prompts validados, framework do método e checklist anti-cara-de-IA pra reaplicar em qualquer cliente.",
+        "descricao": "Tudo que você fez na sala, registrado pra reaplicar em outros clientes. Não é PDF de 200 páginas — é referência permanente.",
+        "valor": "R$ 150",
+        "valorNum": 150
+      },
+      {
+        "titulo": "Esquadrão UNI IA (grupo dos formados)",
+        "promessa": "Entre no grupo dos formados UNI IA — tira-dúvida com gente da sua área, sem voltar pra solidão depois.",
+        "descricao": "Você não volta pra solidão quando o Workshop termina. Tira-dúvida com quem viveu a mesma coisa que você.",
+        "valor": "R$ 80",
+        "valorNum": 80
+      }
+    ],
+    "total": { "label": "VALOR TOTAL DE MERCADO", "valor": "R$ 980" }
+  },
+  "porQuePresencial": {
+    "eyebrow": "por que presencial",
+    "headlinePre": "Tem 200 vídeos no YouTube grátis.",
+    "accent": "Por que",
+    "tabela": [
+      {
+        "alternativa": "Curso online genérico",
+        "preco": "FGV R$4.877 · Hotmart R$1.997-3.500",
+        "entrega": "Informação sistemática sobre IA. Conteúdo estruturado em módulos.",
+        "naoEntrega": "Aplicação no seu cliente real. Correção em tempo real. Garantia de você terminar."
+      },
+      {
+        "alternativa": "Workshop online ao vivo (Zoom)",
+        "entrega": "Acesso ao instrutor sem sair de casa. Mais barato que presencial.",
+        "naoEntrega": "Ninguém vê sua tela quando você trava. Distração de 7 abas abertas. Network inexistente."
+      },
+      {
+        "alternativa": "Mentoria 1:1",
+        "entrega": "Correção individual de qualidade superior. Caso 100% adaptado a você.",
+        "naoEntrega": "Acessibilidade — R$300-1.000/h. 3 horas custariam R$900-3.000."
+      },
+      {
+        "alternativa": "Comunidade paga (Discord/Telegram)",
+        "entrega": "Troca contínua. Tira-dúvida no dia. Pessoas no mesmo caminho.",
+        "naoEntrega": "Método. Você entra com dúvida e sai com dúvida. Sem caminho fechado."
+      },
+      {
+        "alternativa": "Aprender sozinho(a) (YouTube)",
+        "entrega": "Informação gratuita e abundante. 1.000 vídeos sobre IA.",
+        "naoEntrega": "Filtro do que assistir. Aplicação. Cemitério de boas intenções repetido."
+      },
+      {
+        "alternativa": "Workshop UNI IA — 3h presencial em BH",
+        "entrega": "Método aplicado no seu cliente real, com correção ao vivo, em uma única noite. Sai com 30 dias fechados no Drive.",
+        "naoEntrega": "—",
+        "destaque": true
+      }
+    ],
+    "sintese": "Curso ensina sobre IA. Mentoria custa caro. YouTube te deixa sozinho(a). Workshop UNI IA é o único formato em BH onde você produz no seu cliente real, com correção ao vivo, em uma única noite — por R$47."
+  },
+  "paraQuem": {
+    "eyebrow": "para quem é",
+    "headline": "O Workshop UNI IA é pra quem:",
+    "lista": [
+      "Cansou de calendário travado por 3 dias",
+      "Já tentou ChatGPT Plus e cancelou sem sentir diferença",
+      "Tem vergonha de admitir que usa IA mal",
+      "Quer fechar 30 dias de calendário em 1 hora",
+      "Quer voltar a se reconhecer no que entrega",
+      "Quer ser quem o chefe chama PRA perguntar como usa IA",
+      "Cansou de salvar post e nunca aplicar",
+      "Sente o mercado passando enquanto continua manual"
+    ],
+    "bulletFinal": "É pra quem quer 30 dias de conteúdo profissional numa única terça à noite — em 3 horas, presencial em BH."
+  },
+  "recap": {
+    "eyebrow": "recapitulação",
+    "headline": "Antes do preço, recapitulando o que você leva pra casa:",
+    "itens": [
+      "Workshop Calendário Fechado · 3h presenciais com correção ao vivo · R$ 350",
+      "Calendário de 30 dias · pronto pra publicar quarta de manhã · R$ 400",
+      "Kit de Bordo · 20+ prompts e checklist anti-cara-de-IA · R$ 150",
+      "Esquadrão UNI IA · grupo dos formados, sem voltar pra solidão · R$ 80"
+    ],
+    "ancoragem": "Tudo isso somado vale R$ 980 no mercado real.",
+    "ancoragemPos": "No Lote 1 do Workshop UNI IA — só 7 vagas — você leva tudo por R$ 47. Não porque a gente desvalorizou o que entrega. Porque a primeira turma vira nossa prova social. E prova social vale mais que margem."
+  },
+  "preco": {
+    "eyebrow": "preço · lotes · dupla",
+    "headlinePre": "R$ 980 no mercado.",
+    "accent": "R$ 47",
+    "headlinePost": "no Lote 1.",
+    "ancoragem": [
+      { "curso": "FGV — 64h online genérico", "valor": "R$ 4.877", "entrega": "Informação sem aplicação" },
+      { "curso": "Hotmart — cursos online de IA", "valor": "R$ 1.997 a R$ 3.500", "entrega": "Gravado, sem correção, sem garantia" },
+      { "curso": "Workshop UNI IA — 3h presencial em BH", "valor": "R$ 47 (Lote 1)", "entrega": "30 dias do seu cliente real, com correção ao vivo", "destaque": true }
+    ],
+    "lotes": [
+      {
+        "numero": 1,
+        "nome": "Decolagem",
+        "vagas": 7,
+        "preco_individual": 47,
+        "preco_dupla": 70,
+        "preco_individual_str": "R$ 47",
+        "preco_dupla_str": "R$ 70",
+        "preco_cada_str": "R$ 35 cada",
+        "status_default": "ativo",
+        "legenda": "Primeira turma · prova social vale mais que margem"
+      },
+      {
+        "numero": 2,
+        "nome": "Cruzeiro",
+        "vagas": 7,
+        "preco_individual": 67,
+        "preco_dupla": 100,
+        "preco_individual_str": "R$ 67",
+        "preco_dupla_str": "R$ 100",
+        "preco_cada_str": "R$ 50 cada",
+        "status_default": "aguardando",
+        "legenda": "Abre quando o Lote 1 esgota"
+      },
+      {
+        "numero": 3,
+        "nome": "Última Chamada",
+        "vagas": 6,
+        "preco_individual": 97,
+        "preco_dupla": 145,
+        "preco_individual_str": "R$ 97",
+        "preco_dupla_str": "R$ 145",
+        "preco_cada_str": "R$ 72,50 cada",
+        "status_default": "aguardando",
+        "legenda": "Últimas 6 vagas · sem novo lote depois"
+      }
+    ],
+    "dupla": {
+      "titulo": "Vem em dupla?",
+      "explicacao": "Quando você compra a dupla, o lote ativo × 1,5 vira o preço total. Ou seja: a segunda pessoa paga 50% do valor individual.",
+      "legenda": "Não é desconto. É forma de chegar acompanhado(a) — a colega paga metade porque chegou junto.",
+      "ctaLabel": "Quero a vaga em dupla"
+    },
+    "ctaLabel": "Garantir minha vaga · R$ 47"
+  },
+  "doisCaminhos": {
+    "eyebrow": "dois caminhos",
+    "headlineNeg": "Continuar usando IA da forma errada?",
+    "headlinePos": "Ou virar a",
+    "accent": "chave",
+    "bulletNeg": "Se você não tomar uma decisão agora, em 6 meses você ainda tá salvando post sobre IA, aplicando 5%, e segunda de manhã ainda tem aperto no peito.",
+    "bulletPos": "Se você agir agora, na próxima terça você sai com 30 dias de conteúdo no Drive — e quarta de manhã, antes do café, publica o primeiro.",
+    "ctaLabel": "Decidir agora · R$ 47"
+  },
+  "autoridade": {
+    "eyebrow": "autoridade",
+    "headlinePre": "Consultor de IA aplicada desde",
+    "accent": "2023",
+    "headlinePost": ". Antes de virar tendência de Instagram.",
+    "quemSou": "Sou Mychael Paranhos. Especialista em Marketing Digital e Vendas há mais de 10 anos. Consultor de Inteligência Artificial aplicada a negócios desde 2023 — não desde quando virou tendência. Fundador da Backend Digital e da escola UNI IA, em Belo Horizonte.",
+    "resultados": "Atendi 50+ empresas em lançamentos digitais. Liderei o turnaround do Safe & Araújo Advogados — R$250k em vendas anuais viraram R$3 milhões em 12 meses, 100% online. CMO em operações reais — direito médico, rede de hamburguerias.",
+    "porQue": "Eu vi muita gente boa em marketing usando IA da forma errada — e travando, fingindo, abandonando. O Workshop UNI IA existe pra entregar o método que eu queria ter encontrado quando comecei a aplicar IA em 2023. Você sai com o calendário fechado. Eu garanto.",
+    "nome": "Mychael Paranhos",
+    "cargo": "Fundador da UNI IA · Consultor de IA Aplicada · CMO"
+  },
+  "garantia": {
+    "eyebrow": "garantia calendário fechado",
+    "headlinePre": "Ou você sai com o",
+    "accent": "calendário pronto",
+    "headlinePost": ", ou seu dinheiro de volta.",
+    "bloco1": "Eu confio tanto no Método Calendário Fechado que tirei a barreira do meio: se você seguir o método na sala — trouxer notebook, participar e aplicar no seu cliente real — e ainda assim não sair com o calendário pronto, você escolhe ali na hora. Ou eu fico meia hora a mais com você até o calendário sair, sem cobrança extra. Ou você recebe 100% do que pagou de volta, sem perguntas, sem formulário, sem boleto.",
+    "bloco2": "Você não precisa decidir agora se isso vai funcionar pra você porque essa decisão só pode ser tomada depois que você senta na sala e vive a experiência do método. Então vem sem medo. A garantia existe pra isso. E se chegar lá e não der certo, você sai sabendo na mesma hora — refaz junto comigo OU leva o dinheiro de volta.",
+    "seloTitulo": "Garantia Calendário Fechado",
+    "seloCondicoes": [
+      "Trouxe notebook",
+      "Participou das atividades",
+      "Aplicou no seu cliente real"
+    ],
+    "seloPergunta": "Não saiu com o calendário?",
+    "seloOpcoes": [
+      "(A) Fica meia hora a mais até sair, sem cobrança",
+      "(B) 100% do dinheiro de volta, na hora, sem formulário"
+    ]
+  },
+  "logistica": {
+    "eyebrow": "logística",
+    "headlinePre": "A noite tá pensada pra você que sai do",
+    "accent": "trabalho",
+    "cards": [
+      {
+        "icone": "relogio",
+        "titulo": "Quando",
+        "destaque": "Terça-feira · 19h às 22h",
+        "descricao": "Direto depois do trabalho. 3 horas. Ponto final."
+      },
+      {
+        "icone": "pin",
+        "titulo": "Onde",
+        "destaque": "Espaço UNI IA · Lourdes, BH",
+        "descricao": "A 5 minutos de Uber do Centro-Sul. Endereço completo no e-mail de confirmação."
+      },
+      {
+        "icone": "lanche",
+        "titulo": "Lanche",
+        "destaque": "Servido na chegada",
+        "descricao": "Frutas, biscoito, sucos, água e café. Pra segurar até 22h sem fome."
+      },
+      {
+        "icone": "estacionamento",
+        "titulo": "Estacionamento",
+        "destaque": "Livre na rua",
+        "descricao": "Sem cobrança no horário. Vai chegar, parar e subir. Sem mil contas."
+      },
+      {
+        "icone": "notebook",
+        "titulo": "O que levar",
+        "destaque": "Notebook + briefing",
+        "descricao": "Briefing simples de 1 página (template a gente manda). Toma 10 minutos pra preparar."
+      },
+      {
+        "icone": "pessoas",
+        "titulo": "Capacidade",
+        "destaque": "20 vagas por edição",
+        "descricao": "Sala pequena de propósito. Pra Mychael circular tela por tela."
+      }
+    ],
+    "fechamento": "Você não precisa fazer mil contas pra encaixar isso na rotina."
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "headline": "Antes de você decidir, deixa eu responder o que mais perguntam:",
+    "items": [
+      {
+        "id": "tres-horas-pouco",
+        "pergunta": "\"3 horas é muito pouco pra aprender IA, né?\"",
+        "resposta": "Faz sentido perguntar. A resposta é: 3 horas presenciais com correção em tempo real bate 30 horas online assistindo sozinho(a). Aqui você não aprende sobre IA — você APLICA com método, no seu cliente real, com alguém do lado quando trava. Sai com 30 dias de conteúdo no Drive. Pronto pra publicar quarta de manhã."
+      },
+      {
+        "id": "garantia",
+        "pergunta": "\"Tem garantia? E se eu não gostar?\"",
+        "resposta": "Tem. Se você seguir o método na sala (notebook + participação + aplicação no seu cliente real) e não sair com o calendário pronto, você escolhe na hora: ou fica meia hora a mais comigo até sair, ou recebe 100% do dinheiro de volta. Sem perguntas, sem formulário."
+      },
+      {
+        "id": "vou-aplicar",
+        "pergunta": "\"Vou comprar e não vou aplicar — igual aos outros cursos que abandonei.\"",
+        "resposta": "Esse é exatamente o motivo do Workshop ser presencial e curto. Você não aplica DEPOIS — você aplica DURANTE. Não tem módulo 2 pra abandonar. Você entra travado(a) às 19h e sai às 22h com 30 dias na mão. Diferença radical de curso online de 40h."
+      },
+      {
+        "id": "upsell",
+        "pergunta": "\"Vão me empurrar curso de R$1.400 dentro do Workshop?\"",
+        "resposta": "Vou ser honesto: a gente apresenta o Programa de 12 semanas no final, sim. Seria irresponsável NÃO apresentar — a maioria quer continuar depois. Mas zero pressão. Você sai com 30 dias prontos. Se quiser explorar, a gente conversa. Se não quiser, tá valendo igual."
+      },
+      {
+        "id": "nicho",
+        "pergunta": "\"Meu nicho é diferente. Será que vai funcionar pra mim?\"",
+        "resposta": "Provavelmente sim. O Método Calendário Fechado é agnóstico de nicho — funciona pra B2B, beleza, educação, saúde, finanças. Você traz briefing do SEU cliente real (template a gente manda) e a gente aplica no seu caso. Não é exemplo genérico. É seu cliente, na sua tela."
+      }
+    ],
+    "ctaPos": "Ainda com dúvida? Fala comigo no WhatsApp →"
+  },
+  "ctaFinal": {
+    "eyebrow": "última chamada",
+    "headlinePre": "É terça que vem.",
+    "accent": "Você",
+    "headlinePost": "vem?",
+    "bullets": [
+      "30 dias de conteúdo. 3 horas. Lourdes, BH.",
+      "R$ 47 no Lote 1 (7 vagas) · R$ 70 em dupla",
+      "Garantia: refaz junto OU dinheiro de volta. Você escolhe na hora."
+    ],
+    "ctaLabel": "Garantir minha vaga · R$ 47",
+    "tagline": "Pare de estudar IA.",
+    "taglineAccent": "Execute",
+    "taglineSub": "Saber é o começo. Aplicar é a virada."
+  }
+}

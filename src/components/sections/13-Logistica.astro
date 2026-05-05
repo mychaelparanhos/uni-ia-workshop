@@ -1,0 +1,89 @@
+---
+import Section from '../primitives/Section.astro';
+import Heading from '../primitives/Heading.astro';
+import Accent from '../primitives/Accent.astro';
+import { getEntry } from 'astro:content';
+
+const data = await getEntry('workshop', 'main');
+const w = data!.data.logistica;
+
+const icons: Record<string, string> = {
+  relogio: 'M12 6v6l4 2',
+  pin: 'M12 21s-7-7.5-7-12a7 7 0 1 1 14 0c0 4.5-7 12-7 12z',
+  lanche: 'M3 11h18l-2 9H5l-2-9zm4 0V8a5 5 0 0 1 10 0v3',
+  estacionamento: 'M5 4h14v16H5z M9 8h4a3 3 0 0 1 0 6H9V8zM9 14v6',
+  notebook: 'M3 4h18v12H3z M2 20h20',
+  pessoas: 'M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2 M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z M22 21v-2a4 4 0 0 0-3-3.87 M16 3.13a4 4 0 0 1 0 7.75',
+};
+---
+<Section id="logistica" mode="editorial">
+  <p class="eyebrow fade-up">{w.eyebrow}</p>
+  <Heading level={2} class="fade-up">
+    {w.headlinePre} <Accent>{w.accent}</Accent>.
+  </Heading>
+
+  <ul class="logistica__grid unstyled">
+    {w.cards.map((c) => (
+      <li class="card logistica__card fade-up">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="logistica__icon"
+          aria-hidden="true"
+        >
+          <path d={icons[c.icone]} />
+        </svg>
+        <h3 class="logistica__title">{c.titulo}</h3>
+        <p class="logistica__destaque"><strong>{c.destaque}</strong></p>
+        <p class="logistica__desc">{c.descricao}</p>
+      </li>
+    ))}
+  </ul>
+
+  <p class="logistica__fechamento fade-up"><em>{w.fechamento}</em></p>
+</Section>
+
+<style>
+  .logistica__grid {
+    display: grid;
+    gap: 1.25rem;
+    margin: 2.5rem 0 2rem;
+  }
+  @media (min-width: 768px) { .logistica__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .logistica__grid { grid-template-columns: repeat(3, 1fr); } }
+  .logistica__card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .logistica__icon { color: var(--color-mint-dark); margin-bottom: 0.25rem; }
+  .logistica__title {
+    font-size: 1.125rem;
+    color: var(--color-black);
+    letter-spacing: -0.02em;
+  }
+  .logistica__destaque {
+    color: var(--color-mint-dark);
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .logistica__desc {
+    font-size: 0.9rem;
+    color: var(--color-gray-5);
+    line-height: 1.55;
+  }
+  .logistica__fechamento {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    color: var(--color-gray-5);
+    text-align: center;
+    margin-top: 2rem;
+  }
+</style>

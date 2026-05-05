@@ -1,0 +1,40 @@
+---
+interface Props {
+  variant?: 'light' | 'dark' | 'mark-only';
+  height?: number;
+  class?: string;
+}
+const { variant = 'light', height = 28, class: className } = Astro.props;
+const showWordmark = variant !== 'mark-only';
+const textColor = variant === 'dark' ? '#FFFFFF' : '#0A0A0A';
+---
+<a href="/" class={`logo logo--${variant} ${className || ''}`} aria-label="UNI IA — Início">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox={showWordmark ? '0 0 130 24' : '0 0 24 24'}
+    height={height}
+    width={showWordmark ? height * (130 / 24) : height}
+    aria-hidden="true"
+  >
+    <polygon points="2,4 22,4 12,22" fill="#00E5A0" />
+    {showWordmark && (
+      <text
+        x="30"
+        y="20"
+        font-family="Inter, sans-serif"
+        font-weight="800"
+        font-size="20"
+        fill={textColor}
+        letter-spacing="-0.04em"
+      >UNI IA</text>
+    )}
+  </svg>
+</a>
+
+<style>
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+</style>

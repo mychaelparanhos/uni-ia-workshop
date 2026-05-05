@@ -1,0 +1,76 @@
+---
+import Section from '../primitives/Section.astro';
+import Heading from '../primitives/Heading.astro';
+import Accent from '../primitives/Accent.astro';
+import CTAButton from '../primitives/CTAButton.astro';
+import { getEntry } from 'astro:content';
+
+const data = await getEntry('workshop', 'main');
+const w = data!.data.doisCaminhos;
+const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL;
+---
+<Section id="dois-caminhos" mode="matrix">
+  <p class="eyebrow fade-up">{w.eyebrow}</p>
+  <Heading level={2} class="fade-up dois__title">
+    <span class="dois__neg">✗ {w.headlineNeg}</span>
+    <span class="dois__pos">✓ {w.headlinePos} <Accent>{w.accent}</Accent> em uma terça à noite?</span>
+  </Heading>
+
+  <div class="dois__bullets">
+    <div class="dois__bullet dois__bullet--neg fade-up">
+      <p class="dois__bullet-label">Caminho A</p>
+      <p>{w.bulletNeg}</p>
+    </div>
+    <div class="dois__bullet dois__bullet--pos fade-up">
+      <p class="dois__bullet-label">Caminho B</p>
+      <p>{w.bulletPos}</p>
+    </div>
+  </div>
+
+  <div class="dois__cta fade-up">
+    <CTAButton
+      href={checkoutUrl}
+      size="lg"
+      variant="primary"
+      track="cta_dois_caminhos_click"
+      ariaLabel={w.ctaLabel}
+    >
+      {w.ctaLabel}
+    </CTAButton>
+  </div>
+</Section>
+
+<style>
+  .dois__title { display: flex; flex-direction: column; gap: 0.5rem; }
+  .dois__neg { color: rgba(255, 80, 80, 0.95); }
+  .dois__pos { color: white; }
+
+  .dois__bullets {
+    display: grid;
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+  }
+  @media (min-width: 768px) { .dois__bullets { grid-template-columns: 1fr 1fr; } }
+  .dois__bullet {
+    padding: 1.5rem 1.75rem;
+    border-radius: var(--radius-lg);
+    background: rgba(255,255,255,0.04);
+    border-left: 3px solid;
+    line-height: 1.55;
+    color: rgba(255,255,255,0.85);
+  }
+  .dois__bullet--neg { border-color: rgba(255, 80, 80, 0.6); }
+  .dois__bullet--pos { border-color: var(--color-mint); }
+  .dois__bullet-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+    color: var(--color-mint);
+    font-weight: 700;
+  }
+  .dois__bullet--neg .dois__bullet-label { color: rgba(255, 80, 80, 0.95); }
+
+  .dois__cta { text-align: center; margin-top: 2rem; }
+</style>

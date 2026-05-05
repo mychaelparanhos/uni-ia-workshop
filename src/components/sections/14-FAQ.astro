@@ -1,0 +1,96 @@
+---
+import Section from '../primitives/Section.astro';
+import Heading from '../primitives/Heading.astro';
+import { getEntry } from 'astro:content';
+
+const data = await getEntry('workshop', 'main');
+const w = data!.data.faq;
+const whatsappNumber = (import.meta.env.PUBLIC_WHATSAPP_NUMBER || '+5531999999999').replace(/\D/g, '');
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Tenho uma dúvida sobre o Workshop UNI IA')}`;
+---
+<Section id="faq" mode="editorial">
+  <p class="eyebrow fade-up">{w.eyebrow}</p>
+  <Heading level={2} class="fade-up">{w.headline}</Heading>
+
+  <div class="faq__list">
+    {w.items.map((item, i) => (
+      <details class="faq__item fade-up" data-faq-id={item.id}>
+        <summary>
+          <span class="faq__num">{String(i + 1).padStart(2, '0')}</span>
+          <span class="faq__q">{item.pergunta}</span>
+          <svg class="faq-toggle" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </summary>
+        <div class="faq__a">
+          <p>{item.resposta}</p>
+        </div>
+      </details>
+    ))}
+  </div>
+
+  <p class="faq__cta-pos fade-up">
+    <a href={whatsappUrl} data-track="whatsapp_click" rel="noopener">
+      <em>{w.ctaPos}</em>
+    </a>
+  </p>
+</Section>
+
+<style>
+  .faq__list {
+    margin: 2.5rem 0 2rem;
+    max-width: 880px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .faq__item {
+    background: white;
+    border: 1px solid var(--color-gray-2);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+  }
+  .faq__item[open] {
+    border-color: var(--color-mint);
+  }
+  .faq__item summary {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    font-weight: 600;
+    color: var(--color-black);
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  .faq__num {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-mint-dark);
+    flex-shrink: 0;
+  }
+  .faq__q { flex: 1; }
+  .faq-toggle { color: var(--color-mint-dark); flex-shrink: 0; }
+  .faq__a {
+    padding: 0 1.5rem 1.5rem 4rem;
+    font-size: 0.95rem;
+    color: var(--color-gray-5);
+    line-height: 1.65;
+  }
+  @media (max-width: 640px) {
+    .faq__a { padding-left: 1.5rem; }
+  }
+  .faq__cta-pos {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .faq__cta-pos a {
+    color: var(--color-mint-dark);
+    font-size: 1.125rem;
+    font-family: var(--font-serif);
+    border-bottom: 2px solid var(--color-mint);
+    padding-bottom: 2px;
+  }
+  .faq__cta-pos a:hover { color: var(--color-black); }
+</style>

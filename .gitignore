@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.vercel/
+.astro/
+.env
+.env.production
+.env.local
+.DS_Store
+*.log
+.idea/
+.vscode/
+playwright-report/
+test-results/
+.lighthouseci/

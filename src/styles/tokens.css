@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────
+   UNI IA — Design Tokens v1.5
+   Source of truth: /BRAND KIT/design-tokens.json
+   Changelog v1.5: Inimigo "certificado sem prática", regra híbrida
+   tipográfica, sistema 60-30-10 com peso narrativo.
+   ───────────────────────────────────────────────────────────── */
+
+@theme inline {
+  /* Cores — paleta proprietária */
+  --color-mint: #00E5A0;
+  --color-mint-dark: #00B380;        /* texto mint sobre fundo claro (AA Large 3.04:1) */
+  --color-mint-soft: #B3F5DD;
+  --color-mint-bg: #E6FBF3;          /* mint 15% pra backgrounds suaves */
+  --color-mint-border: rgba(0, 229, 160, 0.25);
+
+  /* Neutros — NUNCA usar #000000 puro */
+  --color-black: #0A0A0A;
+  --color-black-soft: #141414;
+  --color-white: #FFFFFF;
+  --color-light-ios: #F5F5F7;
+  --color-gray-1: #F5F5F7;
+  --color-gray-2: #E5E5EA;
+  --color-gray-3: #C7C7CC;
+  --color-gray-4: #8E8E93;
+  --color-gray-5: #48484A;
+
+  /* Tokens semânticos */
+  --color-text-primary: var(--color-black);
+  --color-text-secondary: var(--color-gray-5);
+  --color-text-disabled: var(--color-gray-3);
+  --color-bg-primary: var(--color-white);
+  --color-bg-soft: var(--color-gray-1);
+  --color-bg-dark: var(--color-black);
+
+  /* Tipografia */
+  --font-display: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+  --font-mono: ui-monospace, "JetBrains Mono", "SF Mono", monospace;
+
+  /* Tamanhos (modular scale) */
+  --text-xs: 0.75rem;       /* 12px */
+  --text-sm: 0.875rem;      /* 14px */
+  --text-base: 1rem;        /* 16px */
+  --text-lg: 1.125rem;      /* 18px */
+  --text-xl: 1.375rem;      /* 22px */
+  --text-2xl: 1.75rem;      /* 28px */
+  --text-3xl: 2.25rem;      /* 36px */
+  --text-display-md: 2.75rem;   /* 44px — mobile hero */
+  --text-display-lg: 3.5rem;    /* 56px — tablet hero */
+  --text-display-hero: 4.5rem;  /* 72px — desktop hero */
+  --text-display-xl: 5.5rem;    /* 88px — desktop XL hero */
+
+  /* Line heights */
+  --leading-tight: 1.05;
+  --leading-snug: 1.15;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+
+  /* Pesos */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 800;
+
+  /* Espaçamento (8pt scale) */
+  --spacing-1: 0.25rem;     /* 4 */
+  --spacing-2: 0.5rem;      /* 8 */
+  --spacing-3: 0.75rem;     /* 12 */
+  --spacing-4: 1rem;        /* 16 */
+  --spacing-5: 1.5rem;      /* 24 */
+  --spacing-6: 2rem;        /* 32 */
+  --spacing-7: 2.5rem;      /* 40 */
+  --spacing-8: 3rem;        /* 48 */
+  --spacing-9: 4rem;        /* 64 */
+  --spacing-10: 5rem;       /* 80 */
+  --spacing-11: 6rem;       /* 96 */
+  --spacing-12: 8rem;       /* 128 */
+
+  /* Borders & radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;             /* padrão da marca */
+  --radius-lg: 12px;
+  --radius-xl: 16px;            /* só em containers grandes */
+
+  /* Sombras */
+  --shadow-sm: 0 2px 4px rgba(10, 10, 10, 0.04);
+  --shadow-md: 0 4px 12px rgba(10, 10, 10, 0.08);
+  --shadow-lg: 0 8px 24px rgba(10, 10, 10, 0.12);
+  --shadow-mint: 0 4px 16px rgba(0, 229, 160, 0.25);
+  --shadow-mint-hover: 0 8px 32px rgba(0, 229, 160, 0.35);
+
+  /* Section padding canônico */
+  --space-section-y-mobile: 5rem;     /* 80px */
+  --space-section-y-desktop: 8rem;    /* 128px */
+  --space-section-x-mobile: 1.5rem;   /* 24px */
+  --space-section-x-desktop: 3rem;    /* 48px */
+  --container-max: 1200px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Self-hosted fonts — subset agressivo (latin only)
+   ───────────────────────────────────────────────────────────── */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/Inter-Regular.woff2") format("woff2");
+  unicode-range: U+0020-007E, U+00A0-00FF, U+2014, U+2018-2019, U+201C-201D, U+2026, U+2030, U+25BC, U+2713, U+274C, U+2705;
+  size-adjust: 100%;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("/fonts/Inter-Medium.woff2") format("woff2");
+  unicode-range: U+0020-007E, U+00A0-00FF, U+2014, U+2018-2019, U+201C-201D, U+2026, U+2030, U+25BC, U+2713, U+274C, U+2705;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/fonts/Inter-Bold.woff2") format("woff2");
+  unicode-range: U+0020-007E, U+00A0-00FF, U+2014, U+2018-2019, U+201C-201D, U+2026, U+2030, U+25BC, U+2713, U+274C, U+2705;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url("/fonts/Inter-Black.woff2") format("woff2");
+  unicode-range: U+0020-007E, U+00A0-00FF, U+2014, U+2018-2019, U+201C-201D, U+2026, U+2030, U+25BC, U+2713, U+274C, U+2705;
+}
+
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/InstrumentSerif-Italic.woff2") format("woff2");
+  unicode-range: U+0020-007E, U+00A0-00FF;
+}

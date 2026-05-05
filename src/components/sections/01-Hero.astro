@@ -1,0 +1,86 @@
+---
+import Section from '../primitives/Section.astro';
+import Heading from '../primitives/Heading.astro';
+import Accent from '../primitives/Accent.astro';
+import CTAButton from '../primitives/CTAButton.astro';
+import TrianguloIcon from '../primitives/TrianguloIcon.astro';
+import { getEntry } from 'astro:content';
+
+const data = await getEntry('workshop', 'main');
+const w = data!.data.hero;
+const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL;
+---
+<Section id="hero" mode="matrix" class="hero">
+  <p class="eyebrow fade-up">Workshop UNI IA · Lote 1 ativo</p>
+  <Heading level={1} class="fade-up">
+    {w.headline} <Accent>{w.accent}</Accent>{w.headlineAfter}
+  </Heading>
+  <p class="hero__sub fade-up">{w.subheadline}</p>
+  <ul class="hero__bullets unstyled fade-up">
+    {w.bullets.map((b) => (
+      <li><TrianguloIcon size={14} /> <span>{b}</span></li>
+    ))}
+  </ul>
+  <div class="fade-up">
+    <CTAButton
+      href={checkoutUrl}
+      size="xl"
+      variant="primary"
+      track="cta_hero_click"
+      ariaLabel={w.ctaLabel}
+    >
+      {w.ctaLabel}
+    </CTAButton>
+  </div>
+</Section>
+<div id="hero-sentinel" aria-hidden="true" style="height:1px"></div>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0,229,160,0.18), transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+  .hero .container {
+    position: relative;
+    z-index: 1;
+    max-width: 980px;
+  }
+  .hero__sub {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.75);
+    margin: 1.5rem 0 2rem;
+    max-width: 720px;
+  }
+  @media (min-width: 768px) {
+    .hero__sub { font-size: 1.25rem; }
+  }
+  .hero__bullets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    margin-bottom: 2.5rem;
+    color: rgba(255,255,255,0.85);
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+  .hero__bullets li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+</style>

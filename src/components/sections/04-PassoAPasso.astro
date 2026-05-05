@@ -1,0 +1,74 @@
+---
+import Section from '../primitives/Section.astro';
+import Heading from '../primitives/Heading.astro';
+import Accent from '../primitives/Accent.astro';
+import { getEntry } from 'astro:content';
+
+const data = await getEntry('workshop', 'main');
+const w = data!.data.passo;
+---
+<Section id="passo-a-passo" mode="editorial">
+  <p class="eyebrow fade-up">{w.eyebrow}</p>
+  <Heading level={2} class="fade-up">
+    {w.headlinePre} <Accent>{w.accent}</Accent> {w.headlinePost}
+  </Heading>
+  <ol class="passo__cards unstyled" role="list">
+    {w.momentos.map((m) => (
+      <li class="card passo__card fade-up">
+        <div class="passo__head">
+          <span class="passo__num">Momento {m.numero}</span>
+          <span class="passo__horario">{m.horario}</span>
+        </div>
+        <h3 class="passo__title">{m.titulo}</h3>
+        <p class="passo__sub">{m.subheadline}</p>
+        <p class="passo__sai"><strong>Sai com:</strong> {m.saiCom}</p>
+      </li>
+    ))}
+  </ol>
+</Section>
+
+<style>
+  .passo__cards {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+  @media (min-width: 1024px) {
+    .passo__cards { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  }
+  .passo__card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .passo__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .passo__num { color: var(--color-mint-dark); font-weight: 700; }
+  .passo__horario { color: var(--color-gray-4); }
+  .passo__title {
+    font-size: 1.5rem;
+    color: var(--color-black);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+  }
+  .passo__sub {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--color-gray-5);
+    flex: 1;
+  }
+  .passo__sai {
+    font-size: 0.875rem;
+    color: var(--color-mint-dark);
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-gray-2);
+  }
+  .passo__sai strong { color: var(--color-black); }
+</style>

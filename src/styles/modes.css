@@ -1,0 +1,78 @@
+/* ─────────────────────────────────────────────────────────────
+   Sistema 60-30-10 com peso narrativo
+   Cada <Section> recebe data-mode que materializa o tema da peça.
+
+   matrix    = fundo preto, texto branco, accent mint puro
+               → dobras de tensão (Hero, Problema, Dois Caminhos, CTA Final)
+
+   editorial = fundo branco, texto preto, accent mint-dark (AA contrast)
+               → dobras de leitura e explicação
+
+   cta-mint  = fundo mint sólido, texto preto Inter Black
+               → blocos de oferta dentro de seções editoriais
+   ───────────────────────────────────────────────────────────── */
+
+section[data-mode] {
+  padding-block: var(--space-section-y-mobile);
+  padding-inline: var(--space-section-x-mobile);
+}
+
+@media (min-width: 768px) {
+  section[data-mode] {
+    padding-block: var(--space-section-y-desktop);
+    padding-inline: var(--space-section-x-desktop);
+  }
+}
+
+section[data-mode] > .container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+}
+
+/* MATRIX */
+section[data-mode="matrix"] {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+section[data-mode="matrix"] .text-secondary {
+  color: rgba(255, 255, 255, 0.7);
+}
+section[data-mode="matrix"] .serif-mint,
+section[data-mode="matrix"] em.serif-mint {
+  color: var(--color-mint);
+}
+section[data-mode="matrix"] hr,
+section[data-mode="matrix"] .divider {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+/* EDITORIAL */
+section[data-mode="editorial"] {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+section[data-mode="editorial"] .text-secondary {
+  color: var(--color-gray-5);
+}
+section[data-mode="editorial"] .serif-mint,
+section[data-mode="editorial"] em.serif-mint {
+  color: var(--color-mint-dark);
+}
+section[data-mode="editorial"] hr,
+section[data-mode="editorial"] .divider {
+  border-color: var(--color-gray-2);
+}
+
+/* Banda mint suave (Dobra 07 — Para Quem) */
+section[data-mode="editorial"][data-band="mint-soft"] {
+  background: var(--color-mint-bg);
+}
+
+/* CTA-MINT */
+section[data-mode="cta-mint"] {
+  background: var(--color-mint);
+  color: var(--color-black);
+}
+section[data-mode="cta-mint"] .text-secondary {
+  color: rgba(10, 10, 10, 0.7);
+}

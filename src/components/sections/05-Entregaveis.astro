@@ -1,0 +1,107 @@
+---
+import Section from '../primitives/Section.astro';
+import Heading from '../primitives/Heading.astro';
+import Accent from '../primitives/Accent.astro';
+import { getEntry } from 'astro:content';
+
+const data = await getEntry('workshop', 'main');
+const w = data!.data.entregaveis;
+---
+<Section id="entregaveis" mode="editorial">
+  <p class="eyebrow fade-up">{w.eyebrow}</p>
+  <Heading level={2} class="fade-up">
+    Veja tudo que entra numa noite de terça em <Accent>Lourdes</Accent> — pra você sair com 30 dias na mão.
+  </Heading>
+  <ul class="entregaveis__grid unstyled">
+    {w.cards.map((c, i) => (
+      <li class="card entregaveis__card fade-up">
+        <span class="entregaveis__num">0{i + 1}</span>
+        <h3 class="entregaveis__title">{c.titulo}</h3>
+        <p class="entregaveis__promessa">{c.promessa}</p>
+        <p class="entregaveis__desc">{c.descricao}</p>
+        <p class="entregaveis__valor"><span>Valor de mercado:</span> {c.valor}</p>
+      </li>
+    ))}
+  </ul>
+  <div class="entregaveis__total card fade-up">
+    <span class="entregaveis__total-label">{w.total.label}</span>
+    <span class="entregaveis__total-valor">{w.total.valor}</span>
+  </div>
+</Section>
+
+<style>
+  .entregaveis__grid {
+    display: grid;
+    gap: 1.25rem;
+    margin: 2.5rem 0 2rem;
+  }
+  @media (min-width: 768px) {
+    .entregaveis__grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  }
+  .entregaveis__card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    position: relative;
+  }
+  .entregaveis__num {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--color-mint-dark);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+  .entregaveis__title {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+    color: var(--color-black);
+  }
+  .entregaveis__promessa {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.0625rem;
+    color: var(--color-mint-dark);
+    line-height: 1.4;
+  }
+  .entregaveis__desc {
+    font-size: 0.9rem;
+    color: var(--color-gray-5);
+    line-height: 1.55;
+    flex: 1;
+  }
+  .entregaveis__valor {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--color-black);
+    font-weight: 600;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-gray-2);
+  }
+  .entregaveis__valor span {
+    color: var(--color-gray-4);
+    font-weight: 400;
+  }
+  .entregaveis__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border: 2px solid var(--color-mint);
+    background: var(--color-mint-bg);
+  }
+  .entregaveis__total-label {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-black);
+    letter-spacing: 0.05em;
+  }
+  .entregaveis__total-valor {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 2rem;
+    color: var(--color-mint-dark);
+    letter-spacing: -0.03em;
+  }
+</style>

@@ -1,0 +1,57 @@
+---
+import Section from '../primitives/Section.astro';
+import Heading from '../primitives/Heading.astro';
+import Accent from '../primitives/Accent.astro';
+import { getEntry } from 'astro:content';
+
+const data = await getEntry('workshop', 'main');
+const w = data!.data.provas;
+---
+<Section id="provas" mode="editorial">
+  <p class="eyebrow fade-up">{w.eyebrow}</p>
+  <Heading level={2} class="fade-up">
+    {w.headlinePre} <Accent>{w.accent}</Accent> {w.headlinePost}
+  </Heading>
+  <p class="provas__sub fade-up">{w.subheadline}</p>
+  <ul class="provas__cards unstyled">
+    {w.credenciais.map((c) => (
+      <li class="card fade-up">
+        <strong class="provas__num">{c.titulo}</strong>
+        <span class="provas__desc">{c.descricao}</span>
+      </li>
+    ))}
+  </ul>
+</Section>
+
+<style>
+  .provas__sub {
+    font-size: 1.0625rem;
+    color: var(--color-gray-5);
+    margin: 1rem 0 2.5rem;
+    max-width: 760px;
+    line-height: 1.55;
+  }
+  .provas__cards {
+    display: grid;
+    gap: 1rem;
+  }
+  @media (min-width: 768px) {
+    .provas__cards { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  }
+  .provas__cards .card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .provas__num {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-black);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+  }
+  .provas__desc {
+    font-size: 0.9rem;
+    color: var(--color-gray-5);
+  }
+</style>

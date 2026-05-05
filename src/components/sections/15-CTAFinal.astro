@@ -1,0 +1,94 @@
+---
+import Section from '../primitives/Section.astro';
+import Heading from '../primitives/Heading.astro';
+import Accent from '../primitives/Accent.astro';
+import CTAButton from '../primitives/CTAButton.astro';
+import CheckIcon from '../primitives/CheckIcon.astro';
+import { getEntry } from 'astro:content';
+
+const data = await getEntry('workshop', 'main');
+const w = data!.data.ctaFinal;
+const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL;
+---
+<Section id="cta-final" mode="matrix" class="ctafinal">
+  <p class="eyebrow fade-up">{w.eyebrow}</p>
+  <Heading level={2} class="ctafinal__title fade-up">
+    {w.headlinePre} <Accent>{w.accent}</Accent> {w.headlinePost}
+  </Heading>
+
+  <ul class="ctafinal__bullets unstyled">
+    {w.bullets.map((b) => (
+      <li class="fade-up"><CheckIcon size={20} /> <span>{b}</span></li>
+    ))}
+  </ul>
+
+  <div class="ctafinal__cta fade-up">
+    <CTAButton
+      href={checkoutUrl}
+      size="xl"
+      variant="primary"
+      track="cta_final_click"
+      ariaLabel={w.ctaLabel}
+    >
+      {w.ctaLabel}
+    </CTAButton>
+  </div>
+
+  <div class="ctafinal__tagline fade-up">
+    <p class="ctafinal__tagline-main">{w.tagline} <Accent>{w.taglineAccent}</Accent>.</p>
+    <p class="ctafinal__tagline-sub"><em>{w.taglineSub}</em></p>
+  </div>
+</Section>
+
+<style>
+  .ctafinal { position: relative; overflow: hidden; }
+  .ctafinal::before {
+    content: '';
+    position: absolute;
+    bottom: -200px;
+    left: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0,229,160,0.18), transparent 70%);
+    filter: blur(60px);
+    pointer-events: none;
+  }
+  .ctafinal .container { position: relative; z-index: 1; max-width: 880px; }
+  .ctafinal__title { max-width: 760px; }
+  .ctafinal__bullets {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 2rem 0 2.5rem;
+  }
+  .ctafinal__bullets li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: rgba(255,255,255,0.92);
+    font-size: 1.0625rem;
+  }
+  .ctafinal__cta { text-align: center; margin: 2rem 0 3rem; }
+  .ctafinal__tagline {
+    text-align: center;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .ctafinal__tagline-main {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 2.25rem;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: white;
+    margin-bottom: 0.75rem;
+  }
+  @media (min-width: 768px) {
+    .ctafinal__tagline-main { font-size: 3rem; }
+  }
+  .ctafinal__tagline-sub {
+    font-family: var(--font-serif);
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.7);
+  }
+</style>

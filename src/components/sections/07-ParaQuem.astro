@@ -1,0 +1,49 @@
+---
+import Section from '../primitives/Section.astro';
+import Heading from '../primitives/Heading.astro';
+import CheckIcon from '../primitives/CheckIcon.astro';
+import { getEntry } from 'astro:content';
+
+const data = await getEntry('workshop', 'main');
+const w = data!.data.paraQuem;
+---
+<Section id="para-quem" mode="editorial" band="mint-soft">
+  <p class="eyebrow fade-up">{w.eyebrow}</p>
+  <Heading level={2} class="fade-up para-quem__title">{w.headline}</Heading>
+  <ul class="unstyled para-quem__list">
+    {w.lista.map((item) => (
+      <li class="fade-up"><CheckIcon size={20} /> <span>{item}</span></li>
+    ))}
+  </ul>
+  <p class="para-quem__final fade-up"><strong>{w.bulletFinal}</strong></p>
+</Section>
+
+<style>
+  .para-quem__title { max-width: 600px; }
+  .para-quem__list {
+    margin: 2rem 0 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 700px;
+  }
+  .para-quem__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 1.0625rem;
+    color: var(--color-black);
+    line-height: 1.5;
+  }
+  .para-quem__list li > :global(svg) { flex-shrink: 0; margin-top: 0.2rem; color: var(--color-mint-dark); }
+  .para-quem__final {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: var(--color-black);
+    max-width: 700px;
+    padding: 1.5rem;
+    border-left: 4px solid var(--color-mint-dark);
+    background: white;
+    border-radius: var(--radius-md);
+  }
+</style>

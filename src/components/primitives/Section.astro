@@ -1,0 +1,27 @@
+---
+/*
+  ┌─────────────────────────────────────────────────────────┐
+  │ Section.astro — Sistema 60-30-10 com peso narrativo     │
+  │                                                         │
+  │   matrix    = fundo preto, texto branco (tensão)        │
+  │   editorial = fundo branco, texto preto (leitura)       │
+  │   cta-mint  = fundo mint, texto preto (oferta)          │
+  │                                                         │
+  │ Hooks de CSS em src/styles/modes.css resolvem o tema    │
+  │ via [data-mode="..."]. Componentes filhos consomem      │
+  │ currentColor, não duplicam paleta.                      │
+  └─────────────────────────────────────────────────────────┘
+*/
+interface Props {
+  id: string;
+  mode: 'matrix' | 'editorial' | 'cta-mint';
+  band?: 'mint-soft';
+  class?: string;
+}
+const { id, mode, band, class: className } = Astro.props;
+---
+<section id={id} data-mode={mode} data-band={band} class={className}>
+  <div class="container">
+    <slot />
+  </div>
+</section>

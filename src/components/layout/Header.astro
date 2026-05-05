@@ -1,0 +1,55 @@
+---
+import Logo from './Logo.astro';
+import CTAButton from '../primitives/CTAButton.astro';
+
+const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL || 'https://wa.me/5531999999999';
+---
+<header id="site-header" class="header" data-revealed="false">
+  <div class="header__inner">
+    <Logo variant="light" height={26} />
+    <CTAButton
+      href={checkoutUrl}
+      size="md"
+      variant="primary"
+      track="cta_header_click"
+      class="header__cta"
+      ariaLabel="Garantir vaga · R$ 47"
+    >
+      Garantir vaga · R$ 47
+    </CTAButton>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--color-gray-2);
+    transform: translateY(-100%);
+    transition: transform 0.25s ease;
+    will-change: transform;
+  }
+  .header[data-revealed="true"] {
+    transform: translateY(0);
+  }
+  .header__inner {
+    max-width: var(--container-max);
+    margin-inline: auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  @media (min-width: 768px) {
+    .header__inner {
+      padding: 0.875rem 2rem;
+    }
+  }
+</style>

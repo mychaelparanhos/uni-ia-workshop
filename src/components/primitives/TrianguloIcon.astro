@@ -1,0 +1,20 @@
+---
+interface Props {
+  size?: number;
+  class?: string;
+  ariaHidden?: boolean;
+}
+const { size = 16, class: className, ariaHidden = true } = Astro.props;
+---
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  viewBox="0 0 20 20"
+  width={size}
+  height={size}
+  class={className}
+  aria-hidden={ariaHidden}
+  fill="currentColor"
+  style="display:inline-block;vertical-align:middle;color:var(--color-mint)"
+>
+  <polygon points="4,4 16,4 10,16" />
+</svg>

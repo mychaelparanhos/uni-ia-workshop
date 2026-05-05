@@ -1,0 +1,107 @@
+---
+import Section from '../primitives/Section.astro';
+import Heading from '../primitives/Heading.astro';
+import Accent from '../primitives/Accent.astro';
+import TrianguloIcon from '../primitives/TrianguloIcon.astro';
+import { getEntry } from 'astro:content';
+
+const data = await getEntry('workshop', 'main');
+const w = data!.data.porQuePresencial;
+---
+<Section id="por-que-presencial" mode="editorial">
+  <p class="eyebrow fade-up">{w.eyebrow}</p>
+  <Heading level={2} class="fade-up">
+    {w.headlinePre} <Accent>{w.accent}</Accent> vir numa terça à noite?
+  </Heading>
+  <div class="porque__table-wrap fade-up">
+    <table class="porque__table">
+      <thead>
+        <tr>
+          <th>Alternativa</th>
+          <th>O que ela entrega</th>
+          <th>O que ela NÃO entrega</th>
+        </tr>
+      </thead>
+      <tbody>
+        {w.tabela.map((linha) => (
+          <tr class={linha.destaque ? 'porque__row--destaque' : ''}>
+            <td>
+              {linha.destaque && <TrianguloIcon size={12} class="porque__icon" />}
+              <strong>{linha.alternativa}</strong>
+              {linha.preco && <small>{linha.preco}</small>}
+            </td>
+            <td>{linha.entrega}</td>
+            <td>{linha.naoEntrega}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+  <blockquote class="porque__sintese fade-up">
+    {w.sintese}
+  </blockquote>
+</Section>
+
+<style>
+  .porque__table-wrap {
+    margin: 2.5rem 0 2rem;
+    overflow-x: auto;
+    border: 1px solid var(--color-gray-2);
+    border-radius: var(--radius-lg);
+  }
+  .porque__table {
+    width: 100%;
+    min-width: 720px;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+  }
+  .porque__table th {
+    text-align: left;
+    padding: 1rem;
+    background: var(--color-gray-1);
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-black);
+    border-bottom: 2px solid var(--color-mint);
+  }
+  .porque__table td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--color-gray-2);
+    color: var(--color-gray-5);
+    line-height: 1.5;
+    vertical-align: top;
+  }
+  .porque__table td strong {
+    display: block;
+    color: var(--color-black);
+    margin-bottom: 0.25rem;
+  }
+  .porque__table td small {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--color-gray-4);
+  }
+  .porque__row--destaque {
+    background: var(--color-mint-bg);
+  }
+  .porque__row--destaque td strong {
+    color: var(--color-mint-dark);
+  }
+  .porque__row--destaque td {
+    color: var(--color-black);
+    font-weight: 500;
+  }
+  .porque__icon { margin-right: 0.5rem; }
+  .porque__sintese {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    color: var(--color-black);
+    border-left: 4px solid var(--color-mint);
+    padding-left: 1.5rem;
+    max-width: 880px;
+  }
+</style>
