@@ -1,22 +1,26 @@
 ---
 import Logo from './Logo.astro';
-import CTAButton from '../primitives/CTAButton.astro';
+import { getEntry } from 'astro:content';
 
 const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL || 'https://wa.me/5531999999999';
+const data = await getEntry('workshop', 'main');
+const w = data!.data.workshop;
+// Mono caption no header — data do workshop
+const dateLabel = w.dateBR.split(' · ')[0]?.toUpperCase() || 'TERÇA · 19H';
 ---
 <header id="site-header" class="header" data-revealed="false">
   <div class="header__inner">
-    <Logo variant="light" height={26} />
-    <CTAButton
+    <Logo variant="dark" height={20} />
+    <span class="uni-mono header__date">// próxima turma · {dateLabel}</span>
+    <a
       href={checkoutUrl}
-      size="md"
-      variant="primary"
-      track="cta_header_click"
-      class="header__cta"
-      ariaLabel="Garantir vaga · R$ 47"
+      class="uni-btn uni-btn-mint uni-btn-sm header__cta"
+      data-track="cta_header_click"
+      aria-label="Garantir vaga · R$ 47"
+      rel="noopener noreferrer"
     >
-      Garantir vaga · R$ 47
-    </CTAButton>
+      Garantir vaga · R$ 47 →
+    </a>
   </div>
 </header>
 
@@ -26,20 +30,18 @@ const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL || 'https://wa.me/553199
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--color-gray-2);
+    z-index: 50;
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--uni-white);
     transform: translateY(-100%);
-    transition: transform 0.25s ease;
+    transition: transform 0.25s var(--ease);
     will-change: transform;
   }
-  /* Fallback pra browsers sem backdrop-filter (Firefox <103 etc) */
   @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-    .header {
-      background: rgba(255, 255, 255, 0.98);
-    }
+    .header { background: rgba(10, 10, 10, 0.92); }
   }
   .header[data-revealed="true"] {
     transform: translateY(0);
@@ -47,15 +49,23 @@ const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL || 'https://wa.me/553199
   .header__inner {
     max-width: var(--container-max);
     margin-inline: auto;
-    padding: 0.75rem 1.5rem;
+    padding: 12px 24px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+    gap: 16px;
   }
   @media (min-width: 768px) {
-    .header__inner {
-      padding: 0.875rem 2rem;
-    }
+    .header__inner { padding: 16px 32px; gap: 24px; }
   }
+  .header__date {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .header__date { display: inline-flex; }
+  }
+  .header__cta { margin-left: auto; }
 </style>

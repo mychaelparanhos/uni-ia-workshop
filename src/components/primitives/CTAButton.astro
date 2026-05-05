@@ -2,7 +2,7 @@
 interface Props {
   href: string;
   size?: 'md' | 'lg' | 'xl';
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'ghost';
   track: string;
   class?: string;
   ariaLabel?: string;
@@ -17,10 +17,18 @@ const {
   ariaLabel,
   disabled = false,
 } = Astro.props;
+
+const variantClass = {
+  primary: 'uni-btn-mint',
+  secondary: 'uni-btn-ghost-light',
+  ghost: 'uni-btn-ghost',
+}[variant];
+
+const sizeClass = `uni-btn-${size}`;
 ---
 <a
   href={disabled ? undefined : href}
-  class={`cta cta--${size} cta--${variant} ${disabled ? 'cta--disabled' : ''} ${className || ''}`}
+  class={`uni-btn ${variantClass} ${sizeClass} ${disabled ? 'uni-btn-disabled' : ''} ${className || ''}`}
   data-track={track}
   aria-label={ariaLabel}
   aria-disabled={disabled ? 'true' : undefined}
@@ -28,50 +36,3 @@ const {
 >
   <slot />
 </a>
-
-<style>
-  .cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    background: var(--color-mint);
-    color: var(--color-black);
-    font-family: var(--font-display);
-    font-weight: 800;
-    text-decoration: none;
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-mint);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-    letter-spacing: -0.01em;
-    white-space: nowrap;
-    line-height: 1;
-  }
-  .cta:hover:not(.cta--disabled) {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-mint-hover);
-  }
-  .cta:active:not(.cta--disabled) {
-    transform: translateY(0);
-  }
-  .cta--md { padding: 0.875rem 1.75rem; font-size: 0.95rem; min-height: 44px; }
-  .cta--lg { padding: 1.125rem 2.25rem; font-size: 1.0625rem; min-height: 48px; }
-  .cta--xl { padding: 1.5rem 3rem; font-size: 1.25rem; min-height: 56px; }
-
-  .cta--secondary {
-    background: transparent;
-    color: var(--color-mint);
-    box-shadow: inset 0 0 0 2px var(--color-mint);
-  }
-  section[data-mode="editorial"] .cta--secondary {
-    color: var(--color-mint-dark);
-    box-shadow: inset 0 0 0 2px var(--color-mint-dark);
-  }
-
-  .cta--disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-    box-shadow: none;
-    pointer-events: none;
-  }
-</style>

@@ -3,112 +3,119 @@ import Logo from './Logo.astro';
 import { getEntry } from 'astro:content';
 
 const data = await getEntry('workshop', 'main');
-const w = data!.data;
+const w = data!.data.workshop;
 const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER || '+5531999999999';
 const cleanWa = whatsappNumber.replace(/\D/g, '');
+const wpHref = `https://wa.me/${cleanWa}`;
 ---
 <footer class="footer">
-  <div class="container">
-    <div class="footer__top">
-      <Logo variant="dark" height={28} />
-      <div class="footer__tagline">
-        Pare de estudar IA. <em class="serif-mint">Execute.</em>
-      </div>
-    </div>
+  <div class="container footer__container">
     <div class="footer__grid">
-      <div>
-        <p class="footer__label">Endereço</p>
-        <p class="footer__value">{w.workshop.address}</p>
-      </div>
-      <div>
-        <p class="footer__label">WhatsApp</p>
-        <p class="footer__value">
-          <a href={`https://wa.me/${cleanWa}`} rel="noopener noreferrer">{whatsappNumber}</a>
+      <div class="footer__brand">
+        <Logo variant="dark" height={22} />
+        <p class="footer__desc">
+          Workshop UNI IA · Calendário Fechado em 3 Horas.<br/>
+          {w.address}, {w.addressLocality}/{w.addressRegion}.
         </p>
       </div>
-      <div>
-        <p class="footer__label">E-mail</p>
-        <p class="footer__value">
-          <a href="mailto:contato@uniia.com.br">contato@uniia.com.br</a>
-        </p>
+
+      <div class="footer__col">
+        <span class="footer__col-title">// workshop</span>
+        <a href="#hero">Sobre o Workshop</a>
+        <a href="#preco">Preço · Lotes</a>
+        <a href="#garantia">Garantia</a>
+        <a href="#faq">Perguntas frequentes</a>
+      </div>
+
+      <div class="footer__col">
+        <span class="footer__col-title">// contato</span>
+        <a href={wpHref} rel="noopener noreferrer">WhatsApp · {whatsappNumber}</a>
+        <a href="mailto:contato@uniia.com.br">contato@uniia.com.br</a>
+        <a href={`https://maps.google.com/?q=${encodeURIComponent(w.address + ', ' + w.addressLocality)}`} rel="noopener noreferrer" target="_blank">Como chegar →</a>
+      </div>
+
+      <div class="footer__col">
+        <span class="footer__col-title">// uni ia</span>
+        <a href="#provas">Quem ensina</a>
+        <a href="#autoridade">Autoridade</a>
+        <a href="#logistica">Logística</a>
       </div>
     </div>
+
     <div class="footer__bottom">
-      <span>© 2026 UNI IA · Todos os direitos reservados</span>
-      <nav class="footer__nav">
-        <a href="/politica-de-privacidade">Política de Privacidade</a>
-        <a href="/termos-de-uso">Termos de Uso</a>
-      </nav>
+      <span class="uni-mono footer__copyright">© 2026 UNI IA · Todos os direitos reservados</span>
+      <span class="uni-mono footer__tagline">QUEM PILOTA NÃO ESPERA.</span>
     </div>
   </div>
 </footer>
 
 <style>
   .footer {
-    background: var(--color-black);
-    color: var(--color-white);
-    padding: 4rem 1.5rem 2.5rem;
+    background: var(--uni-black);
+    color: var(--uni-white);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 64px 24px 32px;
   }
   @media (min-width: 768px) {
-    .footer { padding: 5rem 3rem 3rem; }
+    .footer { padding: 80px 32px 32px; }
   }
-  .footer__top {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    padding-bottom: 2.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    margin-bottom: 2.5rem;
-  }
-  @media (min-width: 768px) {
-    .footer__top { flex-direction: row; align-items: center; justify-content: space-between; }
-  }
-  .footer__tagline {
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.5rem;
-    letter-spacing: -0.03em;
-  }
-  .footer__tagline em {
-    color: var(--color-mint);
-  }
+  .footer__container { max-width: var(--container-max); }
   .footer__grid {
     display: grid;
-    gap: 2rem;
-    margin-bottom: 2.5rem;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    margin-bottom: 56px;
   }
   @media (min-width: 768px) {
-    .footer__grid { grid-template-columns: repeat(3, 1fr); }
+    .footer__grid { grid-template-columns: 2fr 1fr 1fr 1fr; gap: 32px; }
   }
-  .footer__label {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-gray-4);
-    margin-bottom: 0.5rem;
-  }
-  .footer__value {
-    font-size: 0.95rem;
-    color: rgba(255,255,255,0.85);
+  .footer__brand p { margin-top: 16px; }
+  .footer__desc {
+    font-size: 14px;
     line-height: 1.5;
+    color: var(--uni-gray-4);
+    max-width: 360px;
   }
-  .footer__value a:hover { color: var(--color-mint); }
+  .footer__col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .footer__col-title {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--uni-mint);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .footer__col a {
+    font-size: 13px;
+    color: var(--uni-gray-3);
+    transition: color var(--dur-fast) var(--ease);
+  }
+  .footer__col a:hover { color: var(--uni-mint); }
   .footer__bottom {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    font-size: 0.85rem;
-    color: var(--color-gray-4);
+    gap: 12px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
   @media (min-width: 768px) {
-    .footer__bottom { flex-direction: row; justify-content: space-between; align-items: center; }
+    .footer__bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
-  .footer__nav {
-    display: flex;
-    gap: 1.5rem;
+  .footer__copyright,
+  .footer__tagline {
+    font-size: 10px;
+    color: var(--uni-gray-5);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
-  .footer__nav a:hover { color: var(--color-mint); }
+  .footer__tagline { color: var(--uni-gray-4); }
 </style>

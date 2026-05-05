@@ -3,34 +3,46 @@ import Section from '../primitives/Section.astro';
 import Heading from '../primitives/Heading.astro';
 import Accent from '../primitives/Accent.astro';
 import CTAButton from '../primitives/CTAButton.astro';
-import TrianguloIcon from '../primitives/TrianguloIcon.astro';
 import { getEntry } from 'astro:content';
 
 const data = await getEntry('workshop', 'main');
 const w = data!.data.hero;
+const lote = data!.data.preco.lotes[0]; // Lote 1 ativo
 const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL;
 ---
-<Section id="hero" mode="matrix" class="hero">
-  <p class="eyebrow fade-up">Workshop UNI IA · Lote 1 ativo</p>
-  <Heading level={1} class="fade-up">
+<Section id="hero" mode="matrix" class="hero matrix-bg">
+  <div class="mint-glow mint-glow--primary" aria-hidden="true"></div>
+  <div class="mint-glow mint-glow--secondary" aria-hidden="true"></div>
+
+  <span class="uni-eyebrow hero__eyebrow fade-up">▼ workshop uni ia · lote 1 ativo</span>
+
+  <Heading level={1} class="hero__title fade-up">
     {w.headline} <Accent>{w.accent}</Accent>{w.headlineAfter}
   </Heading>
+
   <p class="hero__sub fade-up">{w.subheadline}</p>
+
   <ul class="hero__bullets unstyled fade-up">
     {w.bullets.map((b) => (
-      <li><TrianguloIcon size={14} /> <span>{b}</span></li>
+      <li>
+        <span class="uni-triangle" aria-hidden="true"></span>
+        <span>{b}</span>
+      </li>
     ))}
   </ul>
-  <div class="fade-up">
+
+  <div class="hero__cta fade-up">
     <CTAButton
       href={checkoutUrl}
-      size="xl"
+      size="lg"
       variant="primary"
       track="cta_hero_click"
       ariaLabel={w.ctaLabel}
     >
-      {w.ctaLabel}
+      {w.ctaLabel} →
     </CTAButton>
+    <a href="#preco" class="uni-btn uni-btn-ghost uni-btn-lg">Ver programa</a>
+    <span class="uni-mono hero__spots">● {lote.vagas} vagas · lote 1 decolagem</span>
   </div>
 </Section>
 <div id="hero-sentinel" aria-hidden="true" style="height:1px"></div>
@@ -39,48 +51,91 @@ const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL;
   .hero {
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    bottom: -200px;
-    right: -200px;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(0,229,160,0.18), transparent 70%);
-    filter: blur(60px);
-    pointer-events: none;
-  }
-  .hero .container {
-    position: relative;
-    z-index: 1;
-    max-width: 980px;
-  }
-  .hero__sub {
-    font-size: 1.125rem;
-    line-height: 1.5;
-    color: rgba(255,255,255,0.75);
-    margin: 1.5rem 0 2rem;
-    max-width: 720px;
+    flex-direction: column;
+    justify-content: center;
+    padding-block: 96px !important;
   }
   @media (min-width: 768px) {
-    .hero__sub { font-size: 1.25rem; }
+    .hero { padding-block: 120px 100px !important; }
   }
+
+  .mint-glow {
+    position: absolute;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(0, 229, 160, 0.4), transparent 60%);
+    filter: blur(60px);
+    z-index: 0;
+  }
+  .mint-glow--primary {
+    width: 600px;
+    height: 600px;
+    bottom: -200px;
+    right: -100px;
+  }
+  .mint-glow--secondary {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -100px;
+    opacity: 0.5;
+  }
+
+  .hero .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+  }
+
+  .hero__eyebrow {
+    color: var(--uni-mint);
+  }
+  .hero__eyebrow::before { display: none; } /* triângulo ▼ já está no texto */
+
+  .hero__title {
+    margin: 24px 0 28px;
+  }
+
+  .hero__sub {
+    font-size: 17px;
+    line-height: 1.5;
+    max-width: 620px;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 32px;
+  }
+  @media (min-width: 768px) {
+    .hero__sub { font-size: 19px; }
+  }
+
   .hero__bullets {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem 2rem;
-    margin-bottom: 2.5rem;
-    color: rgba(255,255,255,0.85);
-    font-size: 0.95rem;
+    gap: 12px 28px;
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 15px;
     font-weight: 500;
   }
   .hero__bullets li {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 8px;
+  }
+  .hero__bullets .uni-triangle {
+    color: var(--uni-mint);
+    font-size: 12px;
+  }
+
+  .hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+  .hero__spots {
+    font-size: 11px;
+    color: var(--uni-gray-4);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-left: 8px;
   }
 </style>

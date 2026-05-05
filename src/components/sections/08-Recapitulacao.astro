@@ -9,7 +9,7 @@ const data = await getEntry('workshop', 'main');
 const w = data!.data.recap;
 ---
 <Section id="recapitulacao" mode="editorial">
-  <p class="eyebrow fade-up">{w.eyebrow}</p>
+  <p class="uni-eyebrow fade-up">{w.eyebrow}</p>
   <Heading level={2} class="fade-up">{w.headline}</Heading>
   <ul class="unstyled recap__list">
     {w.itens.map((item) => (

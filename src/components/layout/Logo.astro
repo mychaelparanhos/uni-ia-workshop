@@ -4,16 +4,17 @@ interface Props {
   height?: number;
   class?: string;
 }
-const { variant = 'light', height = 28, class: className } = Astro.props;
+const { variant = 'light', height = 20, class: className } = Astro.props;
 const showWordmark = variant !== 'mark-only';
 const textColor = variant === 'dark' ? '#FFFFFF' : '#0A0A0A';
+const aspectRatio = showWordmark ? 130 / 24 : 1;
 ---
 <a href="/" class={`logo logo--${variant} ${className || ''}`} aria-label="UNI IA — Início">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox={showWordmark ? '0 0 130 24' : '0 0 24 24'}
     height={height}
-    width={showWordmark ? height * (130 / 24) : height}
+    width={height * aspectRatio}
     aria-hidden="true"
   >
     <polygon points="2,4 22,4 12,22" fill="#00E5A0" />

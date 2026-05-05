@@ -8,7 +8,7 @@ const data = await getEntry('workshop', 'main');
 const w = data!.data.paraQuem;
 ---
 <Section id="para-quem" mode="editorial" band="mint-soft">
-  <p class="eyebrow fade-up">{w.eyebrow}</p>
+  <p class="uni-eyebrow fade-up">{w.eyebrow}</p>
   <Heading level={2} class="fade-up para-quem__title">{w.headline}</Heading>
   <ul class="unstyled para-quem__list">
     {w.lista.map((item) => (

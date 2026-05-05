@@ -1,15 +1,16 @@
 ---
 /*
   ┌─────────────────────────────────────────────────────────┐
-  │ Section.astro — Sistema 60-30-10 com peso narrativo     │
+  │ Section.astro — Sistema 60-30-10 (Design System v1.5)   │
   │                                                         │
   │   matrix    = fundo preto, texto branco (tensão)        │
+  │               grid lines + mint glow auto via matrix-bg │
   │   editorial = fundo branco, texto preto (leitura)       │
   │   cta-mint  = fundo mint, texto preto (oferta)          │
   │                                                         │
-  │ Hooks de CSS em src/styles/modes.css resolvem o tema    │
-  │ via [data-mode="..."]. Componentes filhos consomem      │
-  │ currentColor, não duplicam paleta.                      │
+  │ Hooks de CSS em modes.css resolvem o tema via           │
+  │ [data-mode="..."]. Componentes filhos consomem          │
+  │ currentColor.                                           │
   └─────────────────────────────────────────────────────────┘
 */
 interface Props {
@@ -19,8 +20,12 @@ interface Props {
   class?: string;
 }
 const { id, mode, band, class: className } = Astro.props;
+
+// matrix mode adiciona grid lines automaticamente (do design system)
+const autoMatrixBg = mode === 'matrix' && !className?.includes('matrix-bg');
+const sectionClass = [autoMatrixBg ? 'matrix-bg' : '', className].filter(Boolean).join(' ');
 ---
-<section id={id} data-mode={mode} data-band={band} class={className}>
+<section id={id} data-mode={mode} data-band={band} class={sectionClass}>
   <div class="container">
     <slot />
   </div>
