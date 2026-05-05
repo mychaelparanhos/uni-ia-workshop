@@ -89,7 +89,7 @@ src/
 - **Env var pra trocar lote**: `PUBLIC_LOTE_ATIVO` no Vercel UI. Mychael não edita TS.
 - **Regra híbrida tipográfica**: Inter Black + UMA palavra em `<Accent>` (Instrument Serif Italic mint) em CADA H1/H2. mintDark sobre branco, mint puro sobre preto (contraste WCAG).
 - **Sistema 60-30-10**: cada `<Section mode="matrix|editorial|cta-mint">` aplica `data-mode` resolvido em `modes.css`.
-- **Performance**: `inlineStylesheets: 'always'`, fontes self-hosted preload, AVIF+WebP via Astro `<Image>`. JS budget <5KB.
+- **Performance**: `inlineStylesheets: 'always'`, fontes self-hosted (Latin subset Google Fonts, ~120KB total) com preload Inter-Black + IS-Italic, AVIF+WebP via Astro `<Image>`. JS budget <5KB. Re-subset agressivo pra ~20KB é TODO-2 (Lote 2+).
 
 ## Performance budget
 

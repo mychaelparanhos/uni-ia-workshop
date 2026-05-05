@@ -35,6 +35,12 @@ const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL || 'https://wa.me/553199
     transition: transform 0.25s ease;
     will-change: transform;
   }
+  /* Fallback pra browsers sem backdrop-filter (Firefox <103 etc) */
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .header {
+      background: rgba(255, 255, 255, 0.98);
+    }
+  }
   .header[data-revealed="true"] {
     transform: translateY(0);
   }

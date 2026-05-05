@@ -24,7 +24,7 @@ const {
   data-track={track}
   aria-label={ariaLabel}
   aria-disabled={disabled ? 'true' : undefined}
-  rel={href.startsWith('http') ? 'noopener' : undefined}
+  rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
 >
   <slot />
 </a>
