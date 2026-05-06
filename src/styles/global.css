@@ -45,6 +45,7 @@ h1, h2, h3, h4 {
   overflow-wrap: break-word;
   hyphens: none;
   -webkit-hyphens: none;
+  white-space: pre-line;
 }
 
 /* H1 — display, escala mobile-first */

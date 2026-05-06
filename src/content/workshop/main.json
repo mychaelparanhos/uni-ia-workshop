@@ -53,7 +53,7 @@
   },
   "passo": {
     "eyebrow": "passo a passo",
-    "headlinePre": "Esses são os 3 momentos da sala. Em",
+    "headlinePre": "Esses são os 3 momentos do Workshop.\nEm",
     "accent": "3 horas",
     "headlinePost": ", você sai com 30 dias prontos.",
     "momentos": [
@@ -82,7 +82,7 @@
   },
   "entregaveis": {
     "eyebrow": "stack · valor R$ 980",
-    "headline": "Veja tudo que entra numa noite de terça em Lourdes — pra você sair com 30 dias na mão.",
+    "headline": "Veja tudo que entra numa noite de terça em BH/MG — pra você sair com 30 dias na mão.",
     "cards": [
       {
         "titulo": "Workshop Calendário Fechado (3h Presencial)",
@@ -117,7 +117,7 @@
   },
   "porQuePresencial": {
     "eyebrow": "por que presencial",
-    "headlinePre": "Tem milhares de vídeos grátis no YouTube.",
+    "headlinePre": "Tem milhares de vídeos grátis no YouTube.\n",
     "accent": "Por que",
     "tabela": [
       {
@@ -203,7 +203,7 @@
         "preco_dupla_str": "R$ 70",
         "preco_cada_str": "R$ 35 cada",
         "status_default": "ativo",
-        "legenda": "Últimas 2 vagas · Primeira turma · prova social vale mais que margem"
+        "legenda": "Últimas 2 vagas · Primeira turma"
       },
       {
         "numero": 2,
@@ -252,9 +252,9 @@
     "headlinePre": "Não é guru. É",
     "accent": "professor",
     "headlinePost": " no Sebrae e CMO de operações reais.",
-    "quemSou": "Sou Mychael Paranhos. Especialista em Marketing Digital e Vendas há mais de 10 anos. Consultor de Inteligência Artificial aplicada a negócios desde 2023 — não desde quando virou tendência. Professor de Marketing Digital e Inovação no curso técnico de marketing do Sebrae. Bacharel em Publicidade pela PUC-SP.",
-    "resultados": "Atendi 100+ empresas em lançamentos digitais — 8 dígitos em faturamento somado. Liderei o turnaround de um escritório de advocacia em BH: R$250k em vendas anuais viraram R$3 milhões em 12 meses, 100% online, atendendo todos os estados do Brasil. CMO em operações reais — direito médico e rede de hamburguerias.",
-    "porQue": "Eu vi muita gente boa em marketing usando IA da forma errada — e travando, fingindo, abandonando. O Workshop UNI IA existe pra entregar o método que eu queria ter encontrado quando comecei a aplicar IA em 2023. Sou professor há mais de 10 anos — então sei como traduzir método em coisa aplicável. Você sai com o calendário fechado. Eu garanto.",
+    "quemSou": "Sou Mychael Paranhos. Especialista em Marketing Digital e Vendas há mais de 10 anos. Consultor de Inteligência Artificial aplicada a negócios desde 2022 — não desde quando virou tendência. Professor de Marketing Digital e Inovação no curso técnico de marketing do Sebrae. Bacharel em Publicidade pela PUC-SP.",
+    "resultados": "Atendi 100+ empresas em lançamentos digitais — 8 dígitos em faturamento somado. Liderei o turnaround de um escritório de advocacia em BH: R$250k em vendas anuais viraram R$3 milhões em 12 meses, 100% online, atendendo todos os estados do Brasil. CMO em operações reais — direito médico, franquias, varejo, rede de hamburguerias e outras grandes operações.",
+    "porQue": "Eu vi muita gente boa em marketing usando IA da forma errada — e travando, fingindo, abandonando. O Workshop UNI IA existe pra entregar o método que eu queria ter encontrado quando comecei a aplicar IA em 2022. O que eu apliquei em 10+ anos de marketing agora está virando método replicável — e cabe numa noite de terça. Você sai com o calendário fechado. Eu garanto.",
     "nome": "Mychael Paranhos",
     "cargo": "Fundador da UNI IA · Consultor de IA Aplicada · Professor de Marketing no Sebrae"
   },
@@ -297,7 +297,7 @@
       {
         "icone": "lanche",
         "titulo": "Lanche",
-        "destaque": "Servido na chegada",
+        "destaque": "Servido no intervalo ~20h",
         "descricao": "Frutas, biscoito, sucos, água e café. Pra segurar até 22h sem fome."
       },
       {
