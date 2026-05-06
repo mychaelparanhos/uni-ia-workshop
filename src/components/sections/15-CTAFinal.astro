@@ -13,7 +13,7 @@ const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL;
 <Section id="cta-final" mode="matrix" class="ctafinal">
   <p class="uni-eyebrow fade-up">{w.eyebrow}</p>
   <Heading level={2} class="ctafinal__title fade-up">
-    {w.headlinePre} <Accent>{w.accent}</Accent> {w.headlinePost}
+    {w.headlinePre}{' '}<Accent>{w.accent}</Accent>{' '}{w.headlinePost}
   </Heading>
 
   <ul class="ctafinal__bullets unstyled">
@@ -35,7 +35,7 @@ const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL;
   </div>
 
   <div class="ctafinal__tagline fade-up">
-    <p class="ctafinal__tagline-main">{w.tagline} <Accent>{w.taglineAccent}</Accent>.</p>
+    <p class="ctafinal__tagline-main">{w.tagline}{' '}<Accent>{w.taglineAccent}</Accent>.</p>
     <p class="ctafinal__tagline-sub"><em>{w.taglineSub}</em></p>
   </div>
 </Section>

@@ -84,9 +84,14 @@ describe('workshop content data', () => {
     expect(data.logistica.cards).toHaveLength(6);
   });
 
-  it('faq has between 5 and 8 items', () => {
-    expect(data.faq.items.length).toBeGreaterThanOrEqual(5);
+  it('faq has between 4 and 8 items', () => {
+    expect(data.faq.items.length).toBeGreaterThanOrEqual(4);
     expect(data.faq.items.length).toBeLessThanOrEqual(8);
+  });
+
+  it('faq has no upsell question (removed deliberately)', () => {
+    const hasUpsell = data.faq.items.some((i: any) => i.id === 'upsell' || /R\$1\.?400|empurrar curso/.test(i.pergunta));
+    expect(hasUpsell).toBe(false);
   });
 
   it('all faq items have unique ids', () => {

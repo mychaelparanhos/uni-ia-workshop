@@ -43,7 +43,8 @@ h1, h2, h3, h4 {
   font-weight: 800;
   color: inherit;
   overflow-wrap: break-word;
-  hyphens: auto;
+  hyphens: none;
+  -webkit-hyphens: none;
 }
 
 /* H1 — display, escala mobile-first */
@@ -54,8 +55,8 @@ h1 {
 }
 @media (min-width: 480px) { h1 { font-size: 44px; } }
 @media (min-width: 768px) { h1 { font-size: 64px; line-height: var(--lh-display); } }
-@media (min-width: 1024px) { h1 { font-size: 80px; } }
-@media (min-width: 1280px) { h1 { font-size: var(--type-display); /* 88 */ } }
+@media (min-width: 1024px) { h1 { font-size: 72px; } }
+@media (min-width: 1280px) { h1 { font-size: 80px; } }
 
 /* H2 */
 h2 {

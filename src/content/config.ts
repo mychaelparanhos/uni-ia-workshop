@@ -178,7 +178,7 @@ const workshopCollection = defineCollection({
     faq: z.object({
       eyebrow: z.string(),
       headline: z.string(),
-      items: z.array(faqItemSchema).min(5).max(8),
+      items: z.array(faqItemSchema).min(4).max(8),
       ctaPos: z.string(),
     }),
     ctaFinal: z.object({

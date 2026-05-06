@@ -10,7 +10,7 @@ const w = data!.data.passo;
 <Section id="passo-a-passo" mode="editorial">
   <p class="uni-eyebrow fade-up">{w.eyebrow}</p>
   <Heading level={2} class="fade-up">
-    {w.headlinePre} <Accent>{w.accent}</Accent> {w.headlinePost}
+    {w.headlinePre}{' '}<Accent>{w.accent}</Accent>{' '}{w.headlinePost}
   </Heading>
   <ol class="passo__cards unstyled" role="list">
     {w.momentos.map((m) => (

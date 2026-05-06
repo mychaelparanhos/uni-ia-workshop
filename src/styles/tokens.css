@@ -199,7 +199,7 @@
   --space-section-y-desktop: 120px;
   --space-section-x-mobile: 24px;
   --space-section-x-desktop: 48px;
-  --container-max: 1280px;
+  --container-max: 1200px;
 
   /* — text aliases — */
   --color-text-primary: var(--fg-1);
