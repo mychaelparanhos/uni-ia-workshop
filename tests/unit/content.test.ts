@@ -75,9 +75,10 @@ describe('workshop content data', () => {
     expect(icones).toEqual(['contexto', 'volume', 'correcao']);
   });
 
-  it('passo has 3 jornada items mapping to time slots', () => {
-    expect(data.passo.jornada).toHaveLength(3);
-    expect(data.passo.jornada[0].horario).toMatch(/19h/);
+  it('porQuePresencial has checklist + reframe (no more table)', () => {
+    expect(data.porQuePresencial.checklist).toBeDefined();
+    expect(data.porQuePresencial.checklist.length).toBeGreaterThanOrEqual(4);
+    expect(data.porQuePresencial.reframe.principal).toContain('aplicação');
   });
 
   it('entregaveis has 4 cards summing R$ 980', () => {

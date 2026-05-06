@@ -62,42 +62,21 @@
         "icone": "contexto",
         "titulo": "Contexto antes de comando",
         "destaque": "Você não pede pra IA \"fazer\". Você ensina pra ela quem é o cliente, qual o tom da marca, qual o público que vai ler.",
-        "descricao": "IA boa precisa de briefing — sem briefing, ela responde no genérico, com cara de IA. O método começa com 15 minutos de estruturação de contexto que muda permanentemente o resultado.",
-        "objecao": "\"ChatGPT sempre sai morno\""
+        "descricao": "IA boa precisa de briefing — sem briefing, ela responde no genérico, com cara de IA. O método começa com 15 minutos de estruturação de contexto que muda permanentemente o resultado."
       },
       {
         "numero": 2,
         "icone": "volume",
         "titulo": "Aplicação em volume",
         "destaque": "O método não fecha 1 post. Fecha 30 de uma vez.",
-        "descricao": "Depois que você define o contexto, replicar pra 30 conteúdos fica mais rápido que produzir 1 sem método. É aqui que o tempo se divide — você não produz unidade por unidade.",
-        "objecao": "\"3 horas é pouco demais\""
+        "descricao": "Depois que você define o contexto, replicar pra 30 conteúdos fica mais rápido que produzir 1 sem método. É aqui que o tempo se divide — você não produz unidade por unidade."
       },
       {
         "numero": 3,
         "icone": "correcao",
         "titulo": "Correção em sala",
         "destaque": "A diferença entre o Método e tutorial é correção em tempo real.",
-        "descricao": "Você produz, o instrutor vê o que está morno e ajusta na hora. Vídeo de YouTube não tem isso. Curso online não tem isso. É o que destrava quem usa IA no automático há meses sem perceber que está usando errado.",
-        "objecao": "\"E se eu travar?\""
-      }
-    ],
-    "jornadaTitulo": "Os 3 pilares se desenrolam em 3 horas:",
-    "jornada": [
-      {
-        "horario": "19h-20h",
-        "titulo": "Destravar",
-        "descricao": "Pilar 1 ao vivo, primeiro post profissional na sua tela"
-      },
-      {
-        "horario": "20h-21h",
-        "titulo": "Aplicar",
-        "descricao": "Pilar 2 em ação, calendário toma forma"
-      },
-      {
-        "horario": "21h-22h",
-        "titulo": "Sair com a mão cheia",
-        "descricao": "Pilar 3 fecha a noite, 30 dias prontos no Drive"
+        "descricao": "Você produz, o instrutor vê o que está morno e ajusta na hora. Vídeo de YouTube não tem isso. Curso online não tem isso. É o que destrava quem usa IA no automático há meses sem perceber que está usando errado."
       }
     ]
   },
@@ -138,43 +117,23 @@
   },
   "porQuePresencial": {
     "eyebrow": "por que presencial",
-    "headlinePre": "Tem milhares de vídeos grátis no YouTube.\n",
+    "headlinePre": "Você já tentou tudo.",
     "accent": "Por que",
-    "tabela": [
-      {
-        "alternativa": "Curso online genérico",
-        "preco": "FGV R$4.877 · Hotmart R$1.997-3.500",
-        "entrega": "Informação sistemática sobre IA. Conteúdo estruturado em módulos.",
-        "naoEntrega": "Aplicação no seu cliente real. Correção em tempo real. Garantia de você terminar."
-      },
-      {
-        "alternativa": "Workshop online ao vivo (Zoom)",
-        "entrega": "Acesso ao instrutor sem sair de casa. Mais barato que presencial.",
-        "naoEntrega": "Ninguém vê sua tela quando você trava. Distração de 7 abas abertas. Network inexistente."
-      },
-      {
-        "alternativa": "Mentoria 1:1",
-        "entrega": "Correção individual de qualidade superior. Caso 100% adaptado a você.",
-        "naoEntrega": "Acessibilidade — R$300-1.000/h. 3 horas custariam R$900-3.000."
-      },
-      {
-        "alternativa": "Comunidade paga (Discord/Telegram)",
-        "entrega": "Troca contínua. Tira-dúvida no dia. Pessoas no mesmo caminho.",
-        "naoEntrega": "Método. Você entra com dúvida e sai com dúvida. Sem caminho fechado."
-      },
-      {
-        "alternativa": "Aprender sozinho(a) (YouTube)",
-        "entrega": "Informação gratuita e abundante. 1.000 vídeos sobre IA.",
-        "naoEntrega": "Filtro do que assistir. Aplicação. Cemitério de boas intenções repetido."
-      },
-      {
-        "alternativa": "Workshop UNI IA — 3h presencial em BH",
-        "entrega": "Método aplicado no seu cliente real, com correção ao vivo, em uma única noite. Sai com 30 dias fechados no Drive.",
-        "naoEntrega": "—",
-        "destaque": true
-      }
+    "headlinePost": "nada funcionou?",
+    "checklistTitulo": "O que você já tentou:",
+    "checklist": [
+      "ChatGPT Plus por 3 meses → cancelou sem sentir diferença",
+      "2 cursos da Hotmart → não terminou nenhum",
+      "200 posts salvos no Instagram → aplicou 5",
+      "1.000 vídeos do YouTube → mesmo lugar",
+      "Comunidade paga → entrou com dúvida, saiu com dúvida"
     ],
-    "sintese": "Curso ensina sobre IA. Mentoria custa caro. YouTube te deixa sozinho(a). Workshop UNI IA é o único formato em BH onde você produz no seu cliente real, com correção ao vivo, em uma única noite — por R$47."
+    "reframe": {
+      "principal": "Não falta informação.\nFalta aplicação.",
+      "complemento": "E aplicação não acontece em vídeo. Acontece com gente do lado, na SUA tela, na hora."
+    },
+    "fechamento": "Workshop UNI IA é o único formato em BH onde você produz no SEU cliente real, com correção ao vivo, em uma única noite — por R$ 47 no 1º lote.",
+    "ctaLabel": "Garanta sua vaga →"
   },
   "paraQuem": {
     "eyebrow": "para quem é",
@@ -277,7 +236,7 @@
     "resultados": "Atendi 100+ empresas em lançamentos digitais — 8 dígitos em faturamento somado. Liderei o turnaround de um escritório de advocacia em BH: R$250k em vendas anuais viraram R$3 milhões em 12 meses, 100% online, atendendo todos os estados do Brasil. CMO em operações reais — direito médico, franquias, varejo, rede de hamburguerias e outras grandes operações.",
     "porQue": "Eu vi muita gente boa em marketing usando IA da forma errada — e travando, fingindo, abandonando. O Workshop UNI IA existe pra entregar o método que eu queria ter encontrado quando comecei a aplicar IA em 2022. O que eu apliquei em 10+ anos de marketing agora está virando método replicável — e cabe numa noite de terça. Você sai com o calendário fechado. Eu garanto.",
     "nome": "Mychael Paranhos",
-    "cargo": "Fundador da UNI IA · Consultor de IA Aplicada · Professor de Marketing no Sebrae"
+    "cargo": "Cofundador da UNI IA · Consultor de IA Aplicada · Professor de Marketing no Sebrae"
   },
   "garantia": {
     "eyebrow": "garantia calendário fechado",

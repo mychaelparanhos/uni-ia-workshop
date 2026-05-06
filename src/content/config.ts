@@ -27,7 +27,7 @@ const pilarSchema = z.object({
   titulo: z.string(),
   destaque: z.string(),
   descricao: z.string(),
-  objecao: z.string(),
+  objecao: z.string().optional(),
 });
 
 const jornadaItemSchema = z.object({
@@ -109,8 +109,8 @@ const workshopCollection = defineCollection({
       accent: z.string(),
       headlinePost: z.string(),
       pilares: z.array(pilarSchema).length(3),
-      jornadaTitulo: z.string(),
-      jornada: z.array(jornadaItemSchema).length(3),
+      jornadaTitulo: z.string().optional(),
+      jornada: z.array(jornadaItemSchema).length(3).optional(),
       momentos: z.array(momentoSchema).length(3).optional(),
     }),
     entregaveis: z.object({
@@ -123,8 +123,17 @@ const workshopCollection = defineCollection({
       eyebrow: z.string(),
       headlinePre: z.string(),
       accent: z.string(),
-      tabela: z.array(linhaTabelaSchema).min(5),
-      sintese: z.string(),
+      headlinePost: z.string(),
+      checklistTitulo: z.string(),
+      checklist: z.array(z.string()).min(4).max(6),
+      reframe: z.object({
+        principal: z.string(),
+        complemento: z.string(),
+      }),
+      fechamento: z.string(),
+      ctaLabel: z.string(),
+      tabela: z.array(linhaTabelaSchema).optional(),
+      sintese: z.string().optional(),
     }),
     paraQuem: z.object({
       eyebrow: z.string(),

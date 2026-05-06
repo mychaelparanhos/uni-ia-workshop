@@ -84,27 +84,9 @@ const w = data!.data.passo;
         <h3 class="pilar__title">{p.titulo}</h3>
         <p class="pilar__destaque">{p.destaque}</p>
         <p class="pilar__desc">{p.descricao}</p>
-        <p class="pilar__objecao">
-          <span class="pilar__objecao-label">Quebra a objeção:</span>{' '}
-          <em>{p.objecao}</em>
-        </p>
       </li>
     ))}
   </ol>
-
-  <div class="jornada fade-up">
-    <p class="jornada__titulo">{w.jornadaTitulo}</p>
-    <ul class="jornada__list unstyled">
-      {w.jornada.map((j) => (
-        <li class="jornada__item">
-          <span class="jornada__horario">{j.horario}</span>
-          <span class="jornada__sep" aria-hidden="true">·</span>
-          <strong class="jornada__titulo-item">{j.titulo}</strong>
-          <span class="jornada__desc">— {j.descricao}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
 </Section>
 
 <style>
@@ -165,65 +147,4 @@ const w = data!.data.passo;
     color: var(--color-gray-5);
     flex: 1;
   }
-  .pilar__objecao {
-    font-size: 0.85rem;
-    color: var(--color-gray-5);
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--color-gray-2);
-    margin-top: 0.5rem;
-  }
-  .pilar__objecao-label {
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-mint-dark);
-    font-weight: 700;
-  }
-  .pilar__objecao em {
-    font-family: var(--font-serif);
-    font-style: italic;
-    color: var(--color-black);
-  }
-
-  .jornada {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--color-gray-2);
-  }
-  .jornada__titulo {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-mint-dark);
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  .jornada__list {
-    display: grid;
-    gap: 0.75rem;
-  }
-  @media (min-width: 768px) {
-    .jornada__list { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-  }
-  .jornada__item {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 0.4rem;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    color: var(--color-gray-5);
-  }
-  .jornada__horario {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--color-mint-dark);
-    font-weight: 700;
-    letter-spacing: 0.04em;
-  }
-  .jornada__sep { color: var(--color-gray-3); }
-  .jornada__titulo-item { color: var(--color-black); font-weight: 600; }
-  .jornada__desc { color: var(--color-gray-5); }
 </style>

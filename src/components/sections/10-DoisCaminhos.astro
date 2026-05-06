@@ -55,7 +55,17 @@ const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL;
 </Section>
 
 <style>
-  .dois__title { display: flex; flex-direction: column; gap: 0.5rem; }
+  .dois__title {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    white-space: normal;
+  }
+  .dois__title .dois__neg,
+  .dois__title .dois__pos {
+    display: block;
+    width: 100%;
+  }
   .dois__neg { color: rgba(255, 80, 80, 0.95); }
   .dois__pos { color: white; }
 
