@@ -11,38 +11,38 @@
     "capacity": 20
   },
   "hero": {
-    "headline": "30 dias de conteúdo",
-    "accent": "profissional",
-    "headlineAfter": ". 3 horas. Presencial em BH.",
-    "subheadline": "Aplique o Método Calendário Fechado direto no seu cliente real, com gente do lado quando travar — sem programar, sem teoria infinita, sem aplicar depois.",
+    "headline": "Aprenda a usar IA da forma",
+    "accent": "correta",
+    "headlineAfter": " e crie 30 dias de conteúdo profissional em 3 horas. Presencial em BH.",
+    "subheadline": "Você aplica o Método Calendário Fechado no SEU projeto ou cliente real, não em exemplo genérico. O instrutor acompanha cada etapa pra te dar direção sempre que precisar.",
     "bullets": [
-      "Sem programar",
-      "Sai com pronto",
-      "Aplica quarta de manhã"
+      "12 DE MAIO · 19h-22h",
+      "LOURDES · BH",
+      "LOTE 1 · ÚLTIMAS 2 VAGAS"
     ],
-    "ctaLabel": "Garantir vaga · R$ 47"
+    "ctaLabel": "Garantir Vaga · de R$ 97 por R$ 47"
   },
   "provas": {
     "eyebrow": "prova social",
-    "headlinePre": "Quem ensina o Método já levou cliente de R$250k a",
-    "accent": "R$3 milhões",
-    "headlinePost": "em 1 ano — 100% com estratégia digital.",
-    "subheadline": "E o mesmo método aplicado nesse caso cabe numa noite de terça em Lourdes — pra você sair com 30 dias do SEU cliente real.",
+    "headlinePre": "Quem ensina o Método é professor de Marketing e Inovação na",
+    "accent": "Escola do Sebrae",
+    "headlinePost": " — e é Consultor de IA aplicada desde 2022.",
+    "subheadline": "3+ anos aplicando IA em consultoria, agora condensados numa única noite de terça em Lourdes — pra você sair com 30 dias do SEU projeto real.",
     "credenciais": [
-      { "titulo": "R$250k → R$3M em 12 meses", "descricao": "Safe & Araújo Advogados, 100% online" },
-      { "titulo": "50+ empresas atendidas", "descricao": "Backend Digital · 7 dígitos" },
-      { "titulo": "Consultor de IA aplicada desde 2023", "descricao": "não 2025/2026" }
+      { "titulo": "Professor no Sebrae", "descricao": "Marketing Digital + Inovação" },
+      { "titulo": "10+ anos de Marketing Digital aplicado", "descricao": "100+ empresas · 8+ dígitos somados · Especialistas, varejo, serviços, profissionais liberais e PMEs" },
+      { "titulo": "Consultor de IA aplicada aos negócios desde 2022", "descricao": "antes de virar tendência" }
     ]
   },
   "problema": {
     "eyebrow": "problema · dor · causa",
     "headlinePre": "Você abre o ChatGPT, pede ajuda com legenda, e o que sai é morno.",
     "accent": "De novo",
-    "subheadline": "Tem medo de chegar em 2028 sendo a pessoa que ficou pra trás, e fica pensando:",
+    "subheadline": "Tem medo de chegar em 2028 e perceber que o mercado andou — e você não. E fica pensando:",
     "autocriticas": [
       "\"Salvei 200 posts e apliquei 5.\"",
       "\"Tô há 1 ano e meio fingindo que sei.\"",
-      "\"Tá saindo raso. Tá saindo igual.\"",
+      "\"Tá saindo igual ao que todo mundo posta.\"",
       "\"Vejo colega chegando com GPT customizado.\""
     ],
     "medos": [
@@ -53,9 +53,9 @@
   },
   "passo": {
     "eyebrow": "passo a passo",
-    "headlinePre": "Esses são os 3 momentos da sala.",
-    "accent": "Uma terça à noite",
-    "headlinePost": "vira 30 dias na mão.",
+    "headlinePre": "Esses são os 3 momentos da sala. Em",
+    "accent": "3 horas",
+    "headlinePost": ", você sai com 30 dias prontos.",
     "momentos": [
       {
         "numero": 1,
@@ -68,7 +68,7 @@
         "numero": 2,
         "titulo": "Aplicar",
         "horario": "20h-21h",
-        "subheadline": "Aqui o tempo se divide por 24. Você produz 1 post, depois 10, depois o calendário toma forma — porque alguém do lado corrige na hora. A objeção \"3 horas é pouco\" se quebra silenciosa, porque você está vendo acontecer.",
+        "subheadline": "É aqui que tudo se acelera. Você produz 1 post. Depois 5. Depois 15. Em 30 minutos, o calendário toma forma na sua tela — porque você não precisa parar pra resolver dúvida sozinho(a). O instrutor está do seu lado, ajustando o que precisa ser ajustado.",
         "saiCom": "Calendário tomando forma"
       },
       {
@@ -100,7 +100,7 @@
       },
       {
         "titulo": "Kit de Bordo (materiais de apoio)",
-        "promessa": "Use 20+ prompts validados, framework do método e checklist anti-cara-de-IA pra reaplicar em qualquer cliente.",
+        "promessa": "Use 20+ prompts validados, framework do método e checklist pra que seu texto não saia com cara de IA — pra reaplicar em qualquer cliente daqui pra frente.",
         "descricao": "Tudo que você fez na sala, registrado pra reaplicar em outros clientes. Não é PDF de 200 páginas — é referência permanente.",
         "valor": "R$ 150",
         "valorNum": 150
@@ -117,7 +117,7 @@
   },
   "porQuePresencial": {
     "eyebrow": "por que presencial",
-    "headlinePre": "Tem 200 vídeos no YouTube grátis.",
+    "headlinePre": "Tem milhares de vídeos grátis no YouTube.",
     "accent": "Por que",
     "tabela": [
       {
@@ -166,7 +166,7 @@
       "Quer voltar a se reconhecer no que entrega",
       "Quer ser quem o chefe chama PRA perguntar como usa IA",
       "Cansou de salvar post e nunca aplicar",
-      "Sente o mercado passando enquanto continua manual"
+      "Sente o mercado passando enquanto continua copiando e colando"
     ],
     "bulletFinal": "É pra quem quer 30 dias de conteúdo profissional numa única terça à noite — em 3 horas, presencial em BH."
   },
@@ -176,7 +176,7 @@
     "itens": [
       "Workshop Calendário Fechado · 3h presenciais com correção ao vivo · R$ 350",
       "Calendário de 30 dias · pronto pra publicar quarta de manhã · R$ 400",
-      "Kit de Bordo · 20+ prompts e checklist anti-cara-de-IA · R$ 150",
+      "Kit de Bordo · 20+ prompts e checklist contra texto com cara de IA · R$ 150",
       "Esquadrão UNI IA · grupo dos formados, sem voltar pra solidão · R$ 80"
     ],
     "ancoragem": "Tudo isso somado vale R$ 980 no mercado real.",
@@ -203,7 +203,7 @@
         "preco_dupla_str": "R$ 70",
         "preco_cada_str": "R$ 35 cada",
         "status_default": "ativo",
-        "legenda": "Primeira turma · prova social vale mais que margem"
+        "legenda": "Últimas 2 vagas · Primeira turma · prova social vale mais que margem"
       },
       {
         "numero": 2,
@@ -231,9 +231,9 @@
       }
     ],
     "dupla": {
-      "titulo": "Vem em dupla?",
-      "explicacao": "Quando você compra a dupla, o lote ativo × 1,5 vira o preço total. Ou seja: a segunda pessoa paga 50% do valor individual.",
-      "legenda": "Não é desconto. É forma de chegar acompanhado(a) — a colega paga metade porque chegou junto.",
+      "titulo": "Vem com uma colega? A segunda pessoa entra pela metade do preço.",
+      "explicacao": "Não é desconto. É forma de chegar acompanhado(a) — quem chama paga o valor cheio do lote, e a segunda pessoa entra por metade do valor.",
+      "legenda": "No Lote 1: você paga R$ 47, a colega paga R$ 23. Total R$ 70.",
       "ctaLabel": "Quero a vaga em dupla"
     },
     "ctaLabel": "Garantir minha vaga · R$ 47"
@@ -244,27 +244,27 @@
     "headlinePos": "Ou virar a",
     "accent": "chave",
     "bulletNeg": "Se você não tomar uma decisão agora, em 6 meses você ainda tá salvando post sobre IA, aplicando 5%, e segunda de manhã ainda tem aperto no peito.",
-    "bulletPos": "Se você agir agora, na próxima terça você sai com 30 dias de conteúdo no Drive — e quarta de manhã, antes do café, publica o primeiro.",
+    "bulletPos": "Se você agir agora, na próxima terça você sai com 30 dias prontos pra publicar — e o problema do calendário travado nunca mais é seu.",
     "ctaLabel": "Decidir agora · R$ 47"
   },
   "autoridade": {
     "eyebrow": "autoridade",
-    "headlinePre": "Consultor de IA aplicada desde",
-    "accent": "2023",
-    "headlinePost": ". Antes de virar tendência de Instagram.",
-    "quemSou": "Sou Mychael Paranhos. Especialista em Marketing Digital e Vendas há mais de 10 anos. Consultor de Inteligência Artificial aplicada a negócios desde 2023 — não desde quando virou tendência. Fundador da Backend Digital e da escola UNI IA, em Belo Horizonte.",
-    "resultados": "Atendi 50+ empresas em lançamentos digitais. Liderei o turnaround do Safe & Araújo Advogados — R$250k em vendas anuais viraram R$3 milhões em 12 meses, 100% online. CMO em operações reais — direito médico, rede de hamburguerias.",
-    "porQue": "Eu vi muita gente boa em marketing usando IA da forma errada — e travando, fingindo, abandonando. O Workshop UNI IA existe pra entregar o método que eu queria ter encontrado quando comecei a aplicar IA em 2023. Você sai com o calendário fechado. Eu garanto.",
+    "headlinePre": "Não é guru. É",
+    "accent": "professor",
+    "headlinePost": " no Sebrae e CMO de operações reais.",
+    "quemSou": "Sou Mychael Paranhos. Especialista em Marketing Digital e Vendas há mais de 10 anos. Consultor de Inteligência Artificial aplicada a negócios desde 2023 — não desde quando virou tendência. Professor de Marketing Digital e Inovação no curso técnico de marketing do Sebrae. Bacharel em Publicidade pela PUC-SP.",
+    "resultados": "Atendi 100+ empresas em lançamentos digitais — 8 dígitos em faturamento somado. Liderei o turnaround de um escritório de advocacia em BH: R$250k em vendas anuais viraram R$3 milhões em 12 meses, 100% online, atendendo todos os estados do Brasil. CMO em operações reais — direito médico e rede de hamburguerias.",
+    "porQue": "Eu vi muita gente boa em marketing usando IA da forma errada — e travando, fingindo, abandonando. O Workshop UNI IA existe pra entregar o método que eu queria ter encontrado quando comecei a aplicar IA em 2023. Sou professor há mais de 10 anos — então sei como traduzir método em coisa aplicável. Você sai com o calendário fechado. Eu garanto.",
     "nome": "Mychael Paranhos",
-    "cargo": "Fundador da UNI IA · Consultor de IA Aplicada · CMO"
+    "cargo": "Fundador da UNI IA · Consultor de IA Aplicada · Professor de Marketing no Sebrae"
   },
   "garantia": {
     "eyebrow": "garantia calendário fechado",
     "headlinePre": "Ou você sai com o",
     "accent": "calendário pronto",
     "headlinePost": ", ou seu dinheiro de volta.",
-    "bloco1": "Eu confio tanto no Método Calendário Fechado que tirei a barreira do meio: se você seguir o método na sala — trouxer notebook, participar e aplicar no seu cliente real — e ainda assim não sair com o calendário pronto, você escolhe ali na hora. Ou eu fico meia hora a mais com você até o calendário sair, sem cobrança extra. Ou você recebe 100% do que pagou de volta, sem perguntas, sem formulário, sem boleto.",
-    "bloco2": "Você não precisa decidir agora se isso vai funcionar pra você porque essa decisão só pode ser tomada depois que você senta na sala e vive a experiência do método. Então vem sem medo. A garantia existe pra isso. E se chegar lá e não der certo, você sai sabendo na mesma hora — refaz junto comigo OU leva o dinheiro de volta.",
+    "bloco1": "Eu confio tanto no Método Calendário Fechado que vou direto ao ponto: se você seguir o método na sala — trouxer notebook, participar e aplicar no seu cliente real — e ainda assim não sair com o calendário pronto, você decide ali mesmo o que fazer. Ou eu fico meia hora a mais com você até o calendário sair, sem cobrança extra. Ou você recebe 100% do que pagou de volta, sem perguntas, sem formulário, sem boleto.",
+    "bloco2": "Você não precisa decidir agora se isso vai funcionar pra você. Essa decisão só dá pra tomar depois que você senta na sala e vive o método — por isso a garantia existe. Vem sem medo. Se chegar lá e não der certo, você sai sabendo na mesma hora — refaz junto comigo OU leva o dinheiro de volta.",
     "seloTitulo": "Garantia Calendário Fechado",
     "seloCondicoes": [
       "Trouxe notebook",
@@ -343,7 +343,7 @@
       {
         "id": "upsell",
         "pergunta": "\"Vão me empurrar curso de R$1.400 dentro do Workshop?\"",
-        "resposta": "Vou ser honesto: a gente apresenta o Programa de 12 semanas no final, sim. Seria irresponsável NÃO apresentar — a maioria quer continuar depois. Mas zero pressão. Você sai com 30 dias prontos. Se quiser explorar, a gente conversa. Se não quiser, tá valendo igual."
+        "resposta": "Vou ser honesto: sim, no final do Workshop a gente apresenta o Programa de 12 semanas. Seria estranho NÃO apresentar — quem se anima com o método, normalmente quer continuar. Mas zero pressão. Você sai com 30 dias prontos de qualquer jeito. Se quiser explorar o programa, a gente marca uma conversa. Se não quiser, o Workshop valeu sozinho."
       },
       {
         "id": "nicho",

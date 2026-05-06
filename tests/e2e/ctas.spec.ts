@@ -3,13 +3,17 @@ import { test, expect } from '@playwright/test';
 test.describe('CTAs — dataLayer events', () => {
   test('CTA hero pushes cta_hero_click', async ({ page }) => {
     await page.goto('/');
-    await page.evaluate(() => { (window as any).dataLayer = []; });
+    await page.evaluate(() => {
+      (window as any).dataLayer = [];
+      // Bloqueia navigate pra capturar dataLayer antes do unload
+      document.querySelectorAll('a[data-track]').forEach((a) => {
+        a.addEventListener('click', (e) => e.preventDefault(), { capture: true });
+      });
+    });
     const cta = page.locator('#hero [data-track="cta_hero_click"]').first();
     await expect(cta).toBeVisible();
-    await cta.click({ trial: true }); // não navega
-    // simula via dispatchEvent pra capturar antes do navigate
     await cta.evaluate((el: HTMLElement) => el.click());
-    await page.waitForTimeout(100);
+    await page.waitForTimeout(150);
     const events = await page.evaluate(() => (window as any).dataLayer);
     const hasEvent = events.some((e: any) => e.event === 'cta_hero_click');
     expect(hasEvent).toBe(true);
@@ -32,10 +36,10 @@ test.describe('CTAs — dataLayer events', () => {
     }
   });
 
-  test('CTAs point to PUBLIC_CHECKOUT_URL (wa.me)', async ({ page }) => {
+  test('CTAs point to PUBLIC_CHECKOUT_URL (Ticto)', async ({ page }) => {
     await page.goto('/');
     const heroCta = page.locator('#hero [data-track="cta_hero_click"]').first();
     const href = await heroCta.getAttribute('href');
-    expect(href).toMatch(/^https:\/\/(wa\.me|api\.whatsapp\.com)\//);
+    expect(href).toMatch(/^https:\/\/(checkout\.ticto\.app|wa\.me|api\.whatsapp\.com)\//);
   });
 });

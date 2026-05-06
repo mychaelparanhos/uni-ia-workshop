@@ -1,11 +1,23 @@
 ---
+import { Image } from 'astro:assets';
 import Section from '../primitives/Section.astro';
 import Heading from '../primitives/Heading.astro';
 import Accent from '../primitives/Accent.astro';
 import { getEntry } from 'astro:content';
+import workshopImg from '../../assets/images/entregavel-workshop.png';
+import calendarioImg from '../../assets/images/entregavel-calendario.png';
+import kitImg from '../../assets/images/entregavel-kit.png';
+import grupoImg from '../../assets/images/entregavel-grupo.png';
 
 const data = await getEntry('workshop', 'main');
 const w = data!.data.entregaveis;
+
+const cardImages = [
+  { src: workshopImg, alt: 'Sala do Workshop UNI IA preparada para a turma — espaço presencial em Lourdes, BH', quality: 82 },
+  { src: calendarioImg, alt: 'Mockup do Calendário de 30 dias produzido na sala — entregável principal do Workshop', quality: 88 },
+  { src: kitImg, alt: 'Kit de Bordo — prompts validados, framework do método e checklist anti-cara-de-IA', quality: 82 },
+  { src: grupoImg, alt: 'Esquadrão UNI IA — grupo dos formados no WhatsApp para tira-dúvida pós-Workshop', quality: 82 },
+];
 ---
 <Section id="entregaveis" mode="editorial">
   <p class="uni-eyebrow fade-up">{w.eyebrow}</p>
@@ -14,7 +26,18 @@ const w = data!.data.entregaveis;
   </Heading>
   <ul class="entregaveis__grid unstyled">
     {w.cards.map((c, i) => (
-      <li class="card entregaveis__card fade-up">
+      <li class={`card entregaveis__card fade-up${i === 1 ? ' entregaveis__card--feature' : ''}`}>
+        <div class="entregaveis__media">
+          <Image
+            src={cardImages[i].src}
+            alt={cardImages[i].alt}
+            widths={[400, 800, 1200]}
+            sizes="(min-width: 1024px) 480px, (min-width: 768px) 380px, 100vw"
+            quality={cardImages[i].quality}
+            loading="lazy"
+            class="entregaveis__media-el"
+          />
+        </div>
         <span class="entregaveis__num">0{i + 1}</span>
         <h3 class="entregaveis__title">{c.titulo}</h3>
         <p class="entregaveis__promessa">{c.promessa}</p>
@@ -103,5 +126,26 @@ const w = data!.data.entregaveis;
     font-size: 2rem;
     color: var(--color-mint-dark);
     letter-spacing: -0.03em;
+  }
+
+  .entregaveis__media {
+    margin: -24px -24px 0;
+    overflow: hidden;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    background: var(--color-gray-1);
+  }
+  .entregaveis__media-el {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+  .entregaveis__card--feature {
+    border: 2px solid var(--color-mint);
+    box-shadow: var(--shadow-mint);
+  }
+  .entregaveis__card--feature .entregaveis__media-el {
+    aspect-ratio: 4 / 3;
   }
 </style>

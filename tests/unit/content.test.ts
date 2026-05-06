@@ -42,8 +42,31 @@ describe('workshop content data', () => {
     expect(data.workshop.postalCode).toBe('30140-074');
   });
 
-  it('hero accent is "profissional" (regra híbrida sentinel)', () => {
-    expect(data.hero.accent).toBe('profissional');
+  it('hero accent is "correta" (regra híbrida sentinel)', () => {
+    expect(data.hero.accent).toBe('correta');
+  });
+
+  it('hero headline opens with new promise "Aprenda a usar IA"', () => {
+    expect(data.hero.headline).toContain('Aprenda a usar IA');
+  });
+
+  it('lote 1 legenda flags scarcity "Últimas 2 vagas"', () => {
+    const lote1 = data.preco.lotes.find((l: any) => l.numero === 1);
+    expect(lote1.legenda).toContain('Últimas 2 vagas');
+  });
+
+  it('provas repositioning: Sebrae present in subheadline OR accent', () => {
+    const haystack = `${data.provas.subheadline} ${data.provas.accent} ${data.provas.headlinePre}`;
+    expect(haystack).toContain('Sebrae');
+  });
+
+  it('garantia bloco1 dropped the old "tirei a barreira" phrasing', () => {
+    expect(data.garantia.bloco1).not.toContain('tirei a barreira');
+    expect(data.garantia.bloco1).toContain('vou direto ao ponto');
+  });
+
+  it('problema autocriticas[2] reflects "todo mundo posta" refraseamento', () => {
+    expect(data.problema.autocriticas[2]).toContain('todo mundo');
   });
 
   it('passo has exactly 3 momentos', () => {

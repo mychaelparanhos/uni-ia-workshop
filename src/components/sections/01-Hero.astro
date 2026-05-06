@@ -1,9 +1,11 @@
 ---
+import { Image } from 'astro:assets';
 import Section from '../primitives/Section.astro';
 import Heading from '../primitives/Heading.astro';
 import Accent from '../primitives/Accent.astro';
 import CTAButton from '../primitives/CTAButton.astro';
 import { getEntry } from 'astro:content';
+import heroImg from '../../assets/images/hero-notebook-maos.png';
 
 const data = await getEntry('workshop', 'main');
 const w = data!.data.hero;
@@ -14,35 +16,52 @@ const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL;
   <div class="mint-glow mint-glow--primary" aria-hidden="true"></div>
   <div class="mint-glow mint-glow--secondary" aria-hidden="true"></div>
 
-  <span class="uni-eyebrow hero__eyebrow fade-up">▼ workshop uni ia · lote 1 ativo</span>
+  <div class="hero__grid">
+    <div class="hero__copy">
+      <span class="uni-eyebrow hero__eyebrow fade-up">▼ workshop uni ia · lote 1 ativo</span>
 
-  <Heading level={1} class="hero__title fade-up">
-    {w.headline} <Accent>{w.accent}</Accent>{w.headlineAfter}
-  </Heading>
+      <Heading level={1} class="hero__title fade-up">
+        {w.headline} <Accent>{w.accent}</Accent>{w.headlineAfter}
+      </Heading>
 
-  <p class="hero__sub fade-up">{w.subheadline}</p>
+      <p class="hero__sub fade-up">{w.subheadline}</p>
 
-  <ul class="hero__bullets unstyled fade-up">
-    {w.bullets.map((b) => (
-      <li>
-        <span class="uni-triangle" aria-hidden="true"></span>
-        <span>{b}</span>
-      </li>
-    ))}
-  </ul>
+      <ul class="hero__bullets unstyled fade-up">
+        {w.bullets.map((b) => (
+          <li>
+            <span class="uni-triangle" aria-hidden="true"></span>
+            <span>{b}</span>
+          </li>
+        ))}
+      </ul>
 
-  <div class="hero__cta fade-up">
-    <CTAButton
-      href={checkoutUrl}
-      size="lg"
-      variant="primary"
-      track="cta_hero_click"
-      ariaLabel={w.ctaLabel}
-    >
-      {w.ctaLabel} →
-    </CTAButton>
-    <a href="#preco" class="uni-btn uni-btn-ghost uni-btn-lg">Ver programa</a>
-    <span class="uni-mono hero__spots">● {lote.vagas} vagas · lote 1 decolagem</span>
+      <div class="hero__cta fade-up">
+        <CTAButton
+          href={checkoutUrl}
+          size="lg"
+          variant="primary"
+          track="cta_hero_click"
+          ariaLabel={w.ctaLabel}
+        >
+          {w.ctaLabel} →
+        </CTAButton>
+        <a href="#preco" class="uni-btn uni-btn-ghost uni-btn-lg">Ver programa</a>
+        <span class="uni-mono hero__spots">● {lote.vagas} vagas · lote 1 decolagem</span>
+      </div>
+    </div>
+
+    <div class="hero__image fade-up" aria-hidden="true">
+      <Image
+        src={heroImg}
+        alt="Notebook aberto com mãos digitando — produzindo conteúdo profissional com IA"
+        widths={[400, 800, 1200]}
+        sizes="(min-width: 1024px) 480px, (min-width: 768px) 380px, 100vw"
+        quality={82}
+        loading="eager"
+        fetchpriority="high"
+        class="hero__image-el"
+      />
+    </div>
   </div>
 </Section>
 <div id="hero-sentinel" aria-hidden="true" style="height:1px"></div>
@@ -137,5 +156,42 @@ const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-left: 8px;
+  }
+
+  .hero__grid {
+    display: grid;
+    gap: 48px;
+    align-items: center;
+  }
+  @media (min-width: 1024px) {
+    .hero__grid {
+      grid-template-columns: 1fr 480px;
+      gap: 64px;
+    }
+  }
+
+  .hero__image {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  }
+  .hero__image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, 0.35));
+    pointer-events: none;
+  }
+  .hero__image-el {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+  @media (max-width: 1023px) {
+    .hero__image { max-width: 560px; margin-inline: auto; }
   }
 </style>

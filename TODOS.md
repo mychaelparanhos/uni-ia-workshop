@@ -76,3 +76,69 @@
 
 ---
 
+## TODO-5: Corrigir contraste WCAG AA do mint-dark sobre branco
+
+**What:** O token `--color-mint-dark` (#00b380) tem contraste 2.7:1 sobre branco — abaixo do WCAG AA mínimo de 4.5:1. Afeta `passo__sai`, `passo__num`, `entregaveis__num` e outros elementos que usam mint sobre branco em texto pequeno (<18pt).
+
+**Why:** axe-core aponta como "serious" — usuários com baixa visão não conseguem ler. SEO/Lighthouse a11y score sofre.
+
+**Pros:** Acessibilidade conforme WCAG AA; melhor leitura geral.
+
+**Cons:** Mudar tom do mint (de #00b380 para ~#008060) afeta identidade visual estabelecida no design system v1.5.
+
+**Context:** Issue está em `src/styles/tokens.css` (`--color-mint-dark`). Solução A: escurecer mint-dark para passar WCAG AA. Solução B: aumentar font-weight desses elementos (700+ em texto pequeno passa). Solução C: aumentar font-size para >18pt (relaxa para 3:1). Já existem 5 testes a11y failing pré-existentes por isso.
+
+**Depends on:** Decisão de design (Uma) sobre alterar token vs aumentar peso/tamanho.
+
+**Priority:** P2 — não bloqueia conversão mas degrada inclusão.
+
+---
+
+## TODO-6: Corrigir contraste do `passo__horario` (#8e8e93 sobre branco)
+
+**What:** Texto cinza `#8e8e93` em fonte 11.2px tem contraste 3.26:1 — abaixo do WCAG AA. Afeta horários ("19h-20h", "20h-21h", "21h-22h") nos cards do passo a passo.
+
+**Why:** axe-core aponta como "serious". Horários são informação útil — não devem ser ilegíveis.
+
+**Pros:** Acessibilidade; horário fica mais visível.
+
+**Cons:** Pode quebrar a hierarquia visual (mono em cinza claro era proposital).
+
+**Context:** Em `src/components/sections/04-PassoAPasso.astro`. Trocar `var(--color-gray-4)` por `var(--color-gray-5)` ou aumentar para 12px+ resolve.
+
+**Priority:** P2.
+
+---
+
+## TODO-7: Adicionar `tabindex=0` ao wrapper da tabela em PorQuePresencial
+
+**What:** `.porque__table-wrap` faz scroll horizontal em mobile mas não é focável via teclado, falha "scrollable-region-focusable" do axe.
+
+**Why:** Usuários só de teclado não conseguem rolar a tabela.
+
+**Pros:** Inclusão; conformidade WCAG.
+
+**Cons:** Adiciona um stop de tab.
+
+**Context:** Em `src/components/sections/06-PorQuePresencial.astro`, adicionar `tabindex="0"` e `role="region" aria-label="Tabela comparativa"` ao wrapper.
+
+**Priority:** P2.
+
+---
+
+## TODO-8: Atualizar test legado de `whatsapp_click` em `/obrigado`
+
+**What:** `tests/e2e/obrigado.spec.ts:22` falha porque assume que CTA aponta para `wa.me`, mas atualmente é Ticto.
+
+**Why:** Test obsoleto desde a migração para checkout Ticto. Falsa-falha em CI.
+
+**Pros:** CI green.
+
+**Cons:** —
+
+**Context:** Mesma natureza do fix em `tests/e2e/ctas.spec.ts:35` — atualizar regex para aceitar `checkout.ticto.app|wa.me|api.whatsapp.com`.
+
+**Priority:** P3 — pré-existente.
+
+---
+

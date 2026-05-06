@@ -1,9 +1,11 @@
 ---
+import { Image } from 'astro:assets';
 import Section from '../primitives/Section.astro';
 import Heading from '../primitives/Heading.astro';
 import Accent from '../primitives/Accent.astro';
 import TrianguloIcon from '../primitives/TrianguloIcon.astro';
 import { getEntry } from 'astro:content';
+import comparativoImg from '../../assets/images/comparativo-sala-vs-sozinho.png';
 
 const data = await getEntry('workshop', 'main');
 const w = data!.data.porQuePresencial;
@@ -13,6 +15,17 @@ const w = data!.data.porQuePresencial;
   <Heading level={2} class="fade-up">
     {w.headlinePre} <Accent>{w.accent}</Accent> vir numa terça à noite?
   </Heading>
+  <figure class="porque__compare fade-up">
+    <Image
+      src={comparativoImg}
+      alt="Comparativo visual: sala de aula presencial com correção ao vivo versus pessoa estudando sozinha em casa"
+      widths={[600, 1000, 1400]}
+      sizes="(min-width: 1024px) 880px, 100vw"
+      quality={82}
+      loading="lazy"
+      class="porque__compare-el"
+    />
+  </figure>
   <div class="porque__table-wrap fade-up">
     <table class="porque__table">
       <thead>
@@ -103,5 +116,19 @@ const w = data!.data.porQuePresencial;
     border-left: 4px solid var(--color-mint);
     padding-left: 1.5rem;
     max-width: 880px;
+  }
+  .porque__compare {
+    margin: 2rem 0 1rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background: var(--color-gray-1);
+    max-width: 880px;
+  }
+  .porque__compare-el {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
   }
 </style>

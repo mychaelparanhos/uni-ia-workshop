@@ -1,9 +1,11 @@
 ---
+import { Image } from 'astro:assets';
 import Section from '../primitives/Section.astro';
 import Heading from '../primitives/Heading.astro';
 import Accent from '../primitives/Accent.astro';
 import CTAButton from '../primitives/CTAButton.astro';
 import { getEntry } from 'astro:content';
+import doisCaminhosImg from '../../assets/images/dois-caminhos.png';
 
 const data = await getEntry('workshop', 'main');
 const w = data!.data.doisCaminhos;
@@ -15,6 +17,18 @@ const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL;
     <span class="dois__neg">✗ {w.headlineNeg}</span>
     <span class="dois__pos">✓ {w.headlinePos} <Accent>{w.accent}</Accent> em uma terça à noite?</span>
   </Heading>
+
+  <figure class="dois__image fade-up" aria-hidden="true">
+    <Image
+      src={doisCaminhosImg}
+      alt="Dois caminhos: continuar usando IA da forma errada ou virar a chave numa terça à noite"
+      widths={[600, 1000, 1400]}
+      sizes="(min-width: 1024px) 880px, 100vw"
+      quality={82}
+      loading="lazy"
+      class="dois__image-el"
+    />
+  </figure>
 
   <div class="dois__bullets">
     <div class="dois__bullet dois__bullet--neg fade-up">
@@ -73,4 +87,21 @@ const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL;
   .dois__bullet--neg .dois__bullet-label { color: rgba(255, 80, 80, 0.95); }
 
   .dois__cta { text-align: center; margin-top: 2rem; }
+
+  .dois__image {
+    margin: 2rem auto 0;
+    max-width: 880px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .dois__image-el {
+    width: 100%;
+    height: auto;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    opacity: 0.9;
+  }
 </style>

@@ -14,14 +14,18 @@ const w = data!.data.problema;
   </Heading>
   <p class="problema__sub fade-up">{w.subheadline}</p>
   <div class="problema__grid">
-    <ul class="unstyled problema__col">
+    <div class="problema__col">
       <p class="problema__label fade-up">Autocríticas</p>
-      {w.autocriticas.map((q) => <li class="problema__quote fade-up">{q}</li>)}
-    </ul>
-    <ul class="unstyled problema__col">
+      <ul class="unstyled problema__list">
+        {w.autocriticas.map((q) => <li class="problema__quote fade-up">{q}</li>)}
+      </ul>
+    </div>
+    <div class="problema__col">
       <p class="problema__label fade-up">Medos</p>
-      {w.medos.map((q) => <li class="problema__quote fade-up">{q}</li>)}
-    </ul>
+      <ul class="unstyled problema__list">
+        {w.medos.map((q) => <li class="problema__quote fade-up">{q}</li>)}
+      </ul>
+    </div>
   </div>
 </Section>
 
@@ -40,6 +44,7 @@ const w = data!.data.problema;
     .problema__grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
   }
   .problema__col { display: flex; flex-direction: column; gap: 0.75rem; }
+  .problema__list { display: flex; flex-direction: column; gap: 0.75rem; }
   .problema__label {
     font-family: var(--font-mono);
     font-size: 0.75rem;
