@@ -22,12 +22,14 @@ describe('workshop content data', () => {
     expect(data.preco.lotes).toHaveLength(3);
   });
 
-  it('lote 1 ativo with R$47 individual / R$70 dupla / 7 vagas', () => {
+  it('lote 1 esgotado · lote 2 ativo (R$67 individual / R$100 dupla / 7 vagas)', () => {
     const lote1 = data.preco.lotes.find((l: any) => l.numero === 1);
-    expect(lote1.preco_individual).toBe(47);
-    expect(lote1.preco_dupla).toBe(70);
-    expect(lote1.vagas).toBe(7);
-    expect(lote1.status_default).toBe('ativo');
+    const lote2 = data.preco.lotes.find((l: any) => l.numero === 2);
+    expect(lote1.status_default).toBe('esgotado');
+    expect(lote2.preco_individual).toBe(67);
+    expect(lote2.preco_dupla).toBe(100);
+    expect(lote2.vagas).toBe(7);
+    expect(lote2.status_default).toBe('ativo');
   });
 
   it('workshop date is 2026-05-12T19:00 BRT', () => {
@@ -50,9 +52,11 @@ describe('workshop content data', () => {
     expect(data.hero.headline).toContain('Aprenda a usar IA');
   });
 
-  it('lote 1 legenda flags scarcity "Últimas 2 vagas"', () => {
+  it('lote 2 legenda flags ativo + Lote 1 esgotado mention', () => {
+    const lote2 = data.preco.lotes.find((l: any) => l.numero === 2);
+    expect(lote2.legenda.toLowerCase()).toContain('ativo');
     const lote1 = data.preco.lotes.find((l: any) => l.numero === 1);
-    expect(lote1.legenda).toContain('Últimas 2 vagas');
+    expect(lote1.legenda.toLowerCase()).toContain('esgotado');
   });
 
   it('provas repositioning: Sebrae present in subheadline OR accent', () => {

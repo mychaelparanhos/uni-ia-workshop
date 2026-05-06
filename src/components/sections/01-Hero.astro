@@ -7,7 +7,8 @@ import { getEntry } from 'astro:content';
 
 const data = await getEntry('workshop', 'main');
 const w = data!.data.hero;
-const lote = data!.data.preco.lotes[0]; // Lote 1 ativo
+const loteAtivoNum = parseInt(import.meta.env.PUBLIC_LOTE_ATIVO || '1', 10);
+const lote = data!.data.preco.lotes.find((l) => l.numero === loteAtivoNum) || data!.data.preco.lotes[0];
 const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL;
 ---
 <Section id="hero" mode="matrix" class="hero matrix-bg">
@@ -41,7 +42,7 @@ const checkoutUrl = import.meta.env.PUBLIC_CHECKOUT_URL;
     >
       {w.ctaLabel} →
     </CTAButton>
-    <span class="uni-mono hero__spots">● {lote.vagas} vagas · lote 1 decolagem</span>
+    <span class="uni-mono hero__spots">● {lote.vagas} vagas · lote {lote.numero} {lote.nome.toLowerCase()}</span>
   </div>
 </Section>
 <div id="hero-sentinel" aria-hidden="true" style="height:1px"></div>

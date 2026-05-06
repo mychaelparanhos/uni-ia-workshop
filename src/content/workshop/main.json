@@ -18,9 +18,9 @@
     "bullets": [
       "12 DE MAIO · 19h-22h",
       "LOURDES · BH",
-      "LOTE 1 · ÚLTIMAS 2 VAGAS"
+      "LOTE 2 · ATIVO AGORA"
     ],
-    "ctaLabel": "Garantir Vaga · de R$ 97 por R$ 47"
+    "ctaLabel": "Garantir Vaga · de R$ 97 por R$ 67"
   },
   "provas": {
     "eyebrow": "prova social",
@@ -132,7 +132,7 @@
       "principal": "Não falta informação.\nFalta aplicação.",
       "complemento": "E aplicação não acontece em vídeo. Acontece com gente do lado, na SUA tela, na hora."
     },
-    "fechamento": "Workshop UNI IA é o único formato em BH onde você produz no SEU cliente real, com correção ao vivo, em uma única noite — por R$ 47 no 1º lote.",
+    "fechamento": "Workshop UNI IA é o único formato em BH onde você produz no SEU cliente real, com correção ao vivo, em uma única noite — por R$ 67 no 2º lote.",
     "ctaLabel": "Garanta sua vaga →"
   },
   "paraQuem": {
@@ -160,17 +160,17 @@
       "Esquadrão UNI IA · grupo dos formados, sem voltar pra solidão · R$ 80"
     ],
     "ancoragem": "Tudo isso somado vale R$ 980 no mercado real.",
-    "ancoragemPos": "No Lote 1 do Workshop UNI IA — só 7 vagas — você leva tudo por R$ 47. É o preço da primeira turma."
+    "ancoragemPos": "No Lote 2 do Workshop UNI IA — só 7 vagas — você leva tudo por R$ 67. O Lote 1 já esgotou."
   },
   "preco": {
     "eyebrow": "preço · lotes · dupla",
     "headlinePre": "R$ 980 no mercado.",
-    "accent": "R$ 47",
-    "headlinePost": "no Lote 1.",
+    "accent": "R$ 67",
+    "headlinePost": "no Lote 2.",
     "ancoragem": [
       { "curso": "FGV — 64h online genérico", "valor": "R$ 4.877", "entrega": "Informação sem aplicação" },
       { "curso": "Hotmart — cursos online de IA", "valor": "R$ 1.997 a R$ 3.500", "entrega": "Gravado, sem correção, sem garantia" },
-      { "curso": "Workshop UNI IA — 3h presencial em BH", "valor": "R$ 47 (Lote 1)", "entrega": "30 dias do seu cliente real, com correção ao vivo", "destaque": true }
+      { "curso": "Workshop UNI IA — 3h presencial em BH", "valor": "R$ 67 (Lote 2)", "entrega": "30 dias do seu cliente real, com correção ao vivo", "destaque": true }
     ],
     "lotes": [
       {
@@ -182,8 +182,8 @@
         "preco_individual_str": "R$ 47",
         "preco_dupla_str": "R$ 70",
         "preco_cada_str": "R$ 35 cada",
-        "status_default": "ativo",
-        "legenda": "Últimas 2 vagas · Primeira turma"
+        "status_default": "esgotado",
+        "legenda": "Esgotado · primeira turma"
       },
       {
         "numero": 2,
@@ -194,8 +194,8 @@
         "preco_individual_str": "R$ 67",
         "preco_dupla_str": "R$ 100",
         "preco_cada_str": "R$ 50 cada",
-        "status_default": "aguardando",
-        "legenda": "Abre quando o Lote 1 esgota"
+        "status_default": "ativo",
+        "legenda": "Ativo agora · vagas limitadas"
       },
       {
         "numero": 3,
@@ -213,10 +213,10 @@
     "dupla": {
       "titulo": "Vem com uma colega? A segunda pessoa entra pela metade do preço.",
       "explicacao": "Não é desconto. É forma de chegar acompanhado(a) — quem chama paga o valor cheio do lote, e a segunda pessoa entra por metade do valor.",
-      "legenda": "No Lote 1: você paga R$ 47, a colega paga R$ 23. Total R$ 70.",
+      "legenda": "No Lote 2: você paga R$ 67, a colega paga R$ 33. Total R$ 100.",
       "ctaLabel": "Quero a vaga em dupla"
     },
-    "ctaLabel": "Garantir minha vaga · R$ 47"
+    "ctaLabel": "Garantir minha vaga · R$ 67"
   },
   "doisCaminhos": {
     "eyebrow": "dois caminhos",
@@ -225,14 +225,14 @@
     "accent": "chave",
     "bulletNeg": "Se você não tomar uma decisão agora, em 6 meses você ainda tá salvando post sobre IA, aplicando 5%, e segunda de manhã ainda tem aperto no peito.",
     "bulletPos": "Se você agir agora, na próxima terça você sai com 30 dias prontos pra publicar — e o problema do calendário travado nunca mais é seu.",
-    "ctaLabel": "Decidir agora · R$ 47"
+    "ctaLabel": "Decidir agora · R$ 67"
   },
   "autoridade": {
     "eyebrow": "autoridade",
     "headlinePre": "Não é guru. É",
     "accent": "professor",
     "headlinePost": " no Sebrae e CMO de operações reais.",
-    "quemSou": "Sou Mychael Paranhos. Especialista em Marketing Digital e Vendas há mais de 10 anos. Consultor de Inteligência Artificial aplicada a negócios desde 2022 — não desde quando virou tendência. Professor de Marketing Digital e Inovação no curso técnico de marketing do Sebrae. Bacharel em Publicidade pela PUC-SP.",
+    "quemSou": "Sou Mychael Paranhos. Especialista em Marketing Digital e Vendas há mais de 10 anos. Consultor de Inteligência Artificial aplicada a negócios desde 2022 — não desde quando virou tendência. Professor de Marketing Digital e Inovação no curso técnico de marketing do Sebrae.",
     "resultados": "Atendi 100+ empresas em lançamentos digitais — 8 dígitos em faturamento somado. Liderei o turnaround de um escritório de advocacia em BH: R$250k em vendas anuais viraram R$3 milhões em 12 meses, 100% online, atendendo todos os estados do Brasil. CMO em operações reais — direito médico, franquias, varejo, rede de hamburguerias e outras grandes operações.",
     "porQue": "Eu vi muita gente boa em marketing usando IA da forma errada — e travando, fingindo, abandonando. O Workshop UNI IA existe pra entregar o método que eu queria ter encontrado quando comecei a aplicar IA em 2022. O que eu apliquei em 10+ anos de marketing agora está virando método replicável — e cabe numa noite de terça. Você sai com o calendário fechado. Eu garanto.",
     "nome": "Mychael Paranhos",
@@ -335,10 +335,10 @@
     "headlinePost": "vem?",
     "bullets": [
       "30 dias de conteúdo. 3 horas. Lourdes, BH.",
-      "R$ 47 no Lote 1 (7 vagas) · R$ 70 em dupla",
+      "R$ 67 no Lote 2 (7 vagas) · R$ 100 em dupla",
       "Garantia: refaz junto OU dinheiro de volta. Você escolhe na hora."
     ],
-    "ctaLabel": "Garantir minha vaga · R$ 47",
+    "ctaLabel": "Garantir minha vaga · R$ 67",
     "tagline": "Pare de estudar IA.",
     "taglineAccent": "Execute",
     "taglineSub": "Saber é o começo. Aplicar é a virada."
