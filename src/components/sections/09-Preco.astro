@@ -23,20 +23,6 @@ function getStatus(loteNum: number): 'ativo' | 'aguardando' | 'esgotado' {
     {w.headlinePre}{' '}<Accent>{w.accent}</Accent>{' '}{w.headlinePost}
   </Heading>
 
-  <div class="preco__ancoragem fade-up">
-    <p class="preco__ancoragem-title">Ancoragem externa</p>
-    <table class="preco__ancoragem-table">
-      <tbody>
-        {w.ancoragem.map((linha) => (
-          <tr class={linha.destaque ? 'preco__ancoragem-destaque' : ''}>
-            <td><strong>{linha.curso}</strong></td>
-            <td>{linha.valor}</td>
-            <td>{linha.entrega}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
 
   <div class="preco__lotes">
     {w.lotes.map((lote) => {
@@ -104,57 +90,6 @@ function getStatus(loteNum: number): 'ativo' | 'aguardando' | 'esgotado' {
 </Section>
 
 <style>
-  .preco__ancoragem {
-    margin: 2.5rem 0;
-    padding: 1.5rem;
-    background: var(--color-gray-1);
-    border-radius: var(--radius-lg);
-    overflow-x: auto;
-  }
-  .preco__ancoragem-title {
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--color-mint-dark);
-    margin-bottom: 0.75rem;
-    font-weight: 700;
-  }
-  .preco__ancoragem-table { width: 100%; border-collapse: collapse; }
-  .preco__ancoragem-table td {
-    padding: 0.75rem 0.5rem;
-    font-size: 0.9rem;
-    color: var(--color-gray-5);
-    border-bottom: 1px solid var(--color-gray-2);
-  }
-  .preco__ancoragem-table tr:last-child td { border-bottom: none; }
-  .preco__ancoragem-destaque td { color: var(--color-black); font-weight: 500; background: var(--color-mint-bg); }
-  .preco__ancoragem-destaque td strong { color: var(--color-mint-dark); }
-
-  /* Mobile: stack das colunas em cards */
-  @media (max-width: 720px) {
-    .preco__ancoragem-table,
-    .preco__ancoragem-table tbody,
-    .preco__ancoragem-table tr,
-    .preco__ancoragem-table td { display: block; width: 100%; }
-    .preco__ancoragem-table tr {
-      padding: 0.75rem 0;
-      border-bottom: 1px solid var(--color-gray-2);
-    }
-    .preco__ancoragem-table tr:last-child { border-bottom: none; }
-    .preco__ancoragem-table td {
-      padding: 0.25rem 0;
-      border-bottom: none;
-    }
-    .preco__ancoragem-table td:first-child { font-weight: 600; color: var(--color-black); }
-    .preco__ancoragem-destaque {
-      background: var(--color-mint-bg);
-      border-radius: var(--radius-md);
-      padding: 0.75rem !important;
-      margin-block: 0.5rem;
-    }
-  }
-
   .preco__lotes {
     display: grid;
     gap: 1.25rem;

@@ -153,7 +153,7 @@ const workshopCollection = defineCollection({
       headlinePre: z.string(),
       accent: z.string(),
       headlinePost: z.string(),
-      ancoragem: z.array(z.object({ curso: z.string(), valor: z.string(), entrega: z.string(), destaque: z.boolean().optional() })),
+      ancoragem: z.array(z.object({ curso: z.string(), valor: z.string(), entrega: z.string(), destaque: z.boolean().optional() })).optional(),
       lotes: z.array(loteSchema).length(3),
       dupla: z.object({
         titulo: z.string(),
