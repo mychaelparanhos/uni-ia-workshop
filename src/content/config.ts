@@ -21,6 +21,21 @@ const momentoSchema = z.object({
   saiCom: z.string(),
 });
 
+const pilarSchema = z.object({
+  numero: z.number().int(),
+  icone: z.enum(['contexto', 'volume', 'correcao']),
+  titulo: z.string(),
+  destaque: z.string(),
+  descricao: z.string(),
+  objecao: z.string(),
+});
+
+const jornadaItemSchema = z.object({
+  horario: z.string(),
+  titulo: z.string(),
+  descricao: z.string(),
+});
+
 const cardEntregavelSchema = z.object({
   titulo: z.string(),
   promessa: z.string(),
@@ -93,7 +108,10 @@ const workshopCollection = defineCollection({
       headlinePre: z.string(),
       accent: z.string(),
       headlinePost: z.string(),
-      momentos: z.array(momentoSchema).length(3),
+      pilares: z.array(pilarSchema).length(3),
+      jornadaTitulo: z.string(),
+      jornada: z.array(jornadaItemSchema).length(3),
+      momentos: z.array(momentoSchema).length(3).optional(),
     }),
     entregaveis: z.object({
       eyebrow: z.string(),

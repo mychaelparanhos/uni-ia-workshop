@@ -69,8 +69,15 @@ describe('workshop content data', () => {
     expect(data.problema.autocriticas[2]).toContain('todo mundo');
   });
 
-  it('passo has exactly 3 momentos', () => {
-    expect(data.passo.momentos).toHaveLength(3);
+  it('passo has exactly 3 pilares (Método Calendário Fechado)', () => {
+    expect(data.passo.pilares).toHaveLength(3);
+    const icones = data.passo.pilares.map((p: any) => p.icone);
+    expect(icones).toEqual(['contexto', 'volume', 'correcao']);
+  });
+
+  it('passo has 3 jornada items mapping to time slots', () => {
+    expect(data.passo.jornada).toHaveLength(3);
+    expect(data.passo.jornada[0].horario).toMatch(/19h/);
   });
 
   it('entregaveis has 4 cards summing R$ 980', () => {

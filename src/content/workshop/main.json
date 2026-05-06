@@ -52,31 +52,52 @@
     ]
   },
   "passo": {
-    "eyebrow": "passo a passo",
-    "headlinePre": "Esses são os 3 momentos do Workshop.\nEm",
+    "eyebrow": "método calendário fechado · 3 pilares",
+    "headlinePre": "Em",
     "accent": "3 horas",
-    "headlinePost": ", você sai com 30 dias prontos.",
-    "momentos": [
+    "headlinePost": ", você aplica os 3 pilares que tornam o Método único.",
+    "pilares": [
       {
         "numero": 1,
-        "titulo": "Destravar",
-        "horario": "19h-20h",
-        "subheadline": "Você descobre, nos primeiros 50 minutos, que o problema nunca foi a ferramenta. Era método. Sai do primeiro momento com um post profissional na sua tela — feito por você, no seu cliente real.",
-        "saiCom": "1 post profissional na tela"
+        "icone": "contexto",
+        "titulo": "Contexto antes de comando",
+        "destaque": "Você não pede pra IA \"fazer\". Você ensina pra ela quem é o cliente, qual o tom da marca, qual o público que vai ler.",
+        "descricao": "IA boa precisa de briefing — sem briefing, ela responde no genérico, com cara de IA. O método começa com 15 minutos de estruturação de contexto que muda permanentemente o resultado.",
+        "objecao": "\"ChatGPT sempre sai morno\""
       },
       {
         "numero": 2,
-        "titulo": "Aplicar",
-        "horario": "20h-21h",
-        "subheadline": "É aqui que tudo se acelera. Você produz 1 post. Depois 5. Depois 15. Em 30 minutos, o calendário toma forma na sua tela — porque você não precisa parar pra resolver dúvida sozinho(a). O instrutor está do seu lado, ajustando o que precisa ser ajustado.",
-        "saiCom": "Calendário tomando forma"
+        "icone": "volume",
+        "titulo": "Aplicação em volume",
+        "destaque": "O método não fecha 1 post. Fecha 30 de uma vez.",
+        "descricao": "Depois que você define o contexto, replicar pra 30 conteúdos fica mais rápido que produzir 1 sem método. É aqui que o tempo se divide — você não produz unidade por unidade.",
+        "objecao": "\"3 horas é pouco demais\""
       },
       {
         "numero": 3,
-        "titulo": "Sair com a mão cheia",
+        "icone": "correcao",
+        "titulo": "Correção em sala",
+        "destaque": "A diferença entre o Método e tutorial é correção em tempo real.",
+        "descricao": "Você produz, o instrutor vê o que está morno e ajusta na hora. Vídeo de YouTube não tem isso. Curso online não tem isso. É o que destrava quem usa IA no automático há meses sem perceber que está usando errado.",
+        "objecao": "\"E se eu travar?\""
+      }
+    ],
+    "jornadaTitulo": "Os 3 pilares se desenrolam em 3 horas:",
+    "jornada": [
+      {
+        "horario": "19h-20h",
+        "titulo": "Destravar",
+        "descricao": "Pilar 1 ao vivo, primeiro post profissional na sua tela"
+      },
+      {
+        "horario": "20h-21h",
+        "titulo": "Aplicar",
+        "descricao": "Pilar 2 em ação, calendário toma forma"
+      },
+      {
         "horario": "21h-22h",
-        "subheadline": "Cada participante vira a tela e mostra o calendário fechado. Você vê os outros notebooks com calendário pronto igual ao seu. Sai com 30 dias no Drive, contato dos colegas e a clareza nova de pra onde IA pode levar sua carreira.",
-        "saiCom": "30 dias fechados no Drive"
+        "titulo": "Sair com a mão cheia",
+        "descricao": "Pilar 3 fecha a noite, 30 dias prontos no Drive"
       }
     ]
   },

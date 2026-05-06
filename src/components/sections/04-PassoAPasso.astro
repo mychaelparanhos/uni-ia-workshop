@@ -10,65 +10,220 @@ const w = data!.data.passo;
 <Section id="passo-a-passo" mode="editorial">
   <p class="uni-eyebrow fade-up">{w.eyebrow}</p>
   <Heading level={2} class="fade-up">
-    {w.headlinePre}{' '}<Accent>{w.accent}</Accent>{' '}{w.headlinePost}
+    {w.headlinePre}{' '}<Accent>{w.accent}</Accent>{w.headlinePost}
   </Heading>
-  <ol class="passo__cards unstyled" role="list">
-    {w.momentos.map((m) => (
-      <li class="card passo__card fade-up">
-        <div class="passo__head">
-          <span class="passo__num">Momento {m.numero}</span>
-          <span class="passo__horario">{m.horario}</span>
+
+  <ol class="pilares__cards unstyled" role="list">
+    {w.pilares.map((p) => (
+      <li class="card pilar__card fade-up">
+        <div class="pilar__head">
+          <span class="pilar__icon" aria-hidden="true">
+            {p.icone === 'contexto' && (
+              <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Briefing passado para IA">
+                {/* Documento à esquerda */}
+                <rect x="6" y="14" width="20" height="26" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <line x1="10" y1="20" x2="22" y2="20" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <line x1="10" y1="25" x2="22" y2="25" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <line x1="10" y1="30" x2="18" y2="30" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                {/* Seta passando contexto */}
+                <line x1="29" y1="27" x2="38" y2="27" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <polyline points="35,23 39,27 35,31" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                {/* Robô/IA à direita */}
+                <rect x="42" y="18" width="18" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <circle cx="48" cy="26" r="1.4" fill="currentColor"/>
+                <circle cx="54" cy="26" r="1.4" fill="currentColor"/>
+                <line x1="48" y1="31" x2="54" y2="31" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <line x1="51" y1="13" x2="51" y2="18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <circle cx="51" cy="11" r="1.6" fill="currentColor"/>
+              </svg>
+            )}
+            {p.icone === 'volume' && (
+              <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Um vira muitos">
+                {/* 1 quadrado grande */}
+                <rect x="6" y="22" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                {/* Seta multiplicando */}
+                <line x1="23" y1="29" x2="32" y2="29" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+                <polyline points="29,25 33,29 29,33" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                {/* Grade 5x3 representando os 30 */}
+                {Array.from({ length: 5 }).map((_, col) =>
+                  Array.from({ length: 3 }).map((__, row) => (
+                    <rect
+                      x={36 + col * 5.4}
+                      y={16 + row * 9}
+                      width="4"
+                      height="7"
+                      rx="0.6"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.2"
+                    />
+                  ))
+                )}
+              </svg>
+            )}
+            {p.icone === 'correcao' && (
+              <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Correção em tempo real">
+                {/* Tela / monitor */}
+                <rect x="8" y="12" width="36" height="24" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/>
+                <line x1="20" y1="40" x2="32" y2="40" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                <line x1="26" y1="36" x2="26" y2="40" stroke="currentColor" stroke-width="1.4"/>
+                {/* Linhas de texto na tela */}
+                <line x1="13" y1="18" x2="27" y2="18" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <line x1="13" y1="22" x2="33" y2="22" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <line x1="13" y1="26" x2="22" y2="26" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                {/* Check mark mint sobreposto */}
+                <circle cx="38" cy="28" r="6" fill="white" stroke="currentColor" stroke-width="1.6"/>
+                <polyline points="35,28 37,30 41,26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                {/* Mão/dedo apontando */}
+                <path d="M 50 22 L 50 32 L 46 36 L 46 40 L 56 40 L 58 36 L 58 24 Q 58 22 56 22 L 54 22 L 54 18 Q 54 16 52 16 Q 50 16 50 18 Z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+              </svg>
+            )}
+          </span>
+          <span class="pilar__num">Pilar {p.numero}</span>
         </div>
-        <h3 class="passo__title">{m.titulo}</h3>
-        <p class="passo__sub">{m.subheadline}</p>
-        <p class="passo__sai"><strong>Sai com:</strong> {m.saiCom}</p>
+        <h3 class="pilar__title">{p.titulo}</h3>
+        <p class="pilar__destaque">{p.destaque}</p>
+        <p class="pilar__desc">{p.descricao}</p>
+        <p class="pilar__objecao">
+          <span class="pilar__objecao-label">Quebra a objeção:</span>{' '}
+          <em>{p.objecao}</em>
+        </p>
       </li>
     ))}
   </ol>
+
+  <div class="jornada fade-up">
+    <p class="jornada__titulo">{w.jornadaTitulo}</p>
+    <ul class="jornada__list unstyled">
+      {w.jornada.map((j) => (
+        <li class="jornada__item">
+          <span class="jornada__horario">{j.horario}</span>
+          <span class="jornada__sep" aria-hidden="true">·</span>
+          <strong class="jornada__titulo-item">{j.titulo}</strong>
+          <span class="jornada__desc">— {j.descricao}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
 </Section>
 
 <style>
-  .passo__cards {
+  .pilares__cards {
     display: grid;
     gap: 1.25rem;
     margin-top: 2.5rem;
   }
   @media (min-width: 1024px) {
-    .passo__cards { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .pilares__cards { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
   }
-  .passo__card {
+  .pilar__card {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    padding: 1.75rem;
   }
-  .passo__head {
+  .pilar__head {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .pilar__icon {
+    display: inline-flex;
+    width: 56px;
+    height: 56px;
+    color: var(--color-mint-dark);
+  }
+  .pilar__icon svg { width: 100%; height: 100%; display: block; }
+  .pilar__num {
     font-family: var(--font-mono);
     font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.1em;
+    color: var(--color-mint-dark);
+    font-weight: 700;
   }
-  .passo__num { color: var(--color-mint-dark); font-weight: 700; }
-  .passo__horario { color: var(--color-gray-4); }
-  .passo__title {
+  .pilar__title {
     font-size: 1.5rem;
     color: var(--color-black);
     line-height: 1.1;
     letter-spacing: -0.03em;
+    margin-top: 0.25rem;
   }
-  .passo__sub {
+  .pilar__destaque {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.0625rem;
+    color: var(--color-mint-dark);
+    line-height: 1.45;
+    letter-spacing: -0.01em;
+  }
+  .pilar__desc {
     font-size: 0.95rem;
-    line-height: 1.55;
+    line-height: 1.6;
     color: var(--color-gray-5);
     flex: 1;
   }
-  .passo__sai {
-    font-size: 0.875rem;
-    color: var(--color-mint-dark);
+  .pilar__objecao {
+    font-size: 0.85rem;
+    color: var(--color-gray-5);
     padding-top: 0.75rem;
     border-top: 1px solid var(--color-gray-2);
+    margin-top: 0.5rem;
   }
-  .passo__sai strong { color: var(--color-black); }
+  .pilar__objecao-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-mint-dark);
+    font-weight: 700;
+  }
+  .pilar__objecao em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-black);
+  }
+
+  .jornada {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-gray-2);
+  }
+  .jornada__titulo {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-mint-dark);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  .jornada__list {
+    display: grid;
+    gap: 0.75rem;
+  }
+  @media (min-width: 768px) {
+    .jornada__list { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  }
+  .jornada__item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--color-gray-5);
+  }
+  .jornada__horario {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-mint-dark);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+  }
+  .jornada__sep { color: var(--color-gray-3); }
+  .jornada__titulo-item { color: var(--color-black); font-weight: 600; }
+  .jornada__desc { color: var(--color-gray-5); }
 </style>
