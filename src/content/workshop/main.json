@@ -160,7 +160,7 @@
       "Esquadrão UNI IA · grupo dos formados, sem voltar pra solidão · R$ 80"
     ],
     "ancoragem": "Tudo isso somado vale R$ 980 no mercado real.",
-    "ancoragemPos": "No Lote 3 (Última Chamada) — só 6 vagas — você leva tudo por R$ 97. Lotes 1 e 2 já esgotaram. Não tem novo lote depois."
+    "ancoragemPos": "No Lote 3 (Última Chamada) — últimas vagas — você leva tudo por R$ 97. Lotes 1 e 2 já esgotaram. Não tem novo lote depois."
   },
   "preco": {
     "eyebrow": "preço · lotes · dupla",
@@ -207,7 +207,7 @@
         "preco_dupla_str": "R$ 145",
         "preco_cada_str": "R$ 72,50 cada",
         "status_default": "ativo",
-        "legenda": "Últimas 6 vagas · sem novo lote depois"
+        "legenda": "Últimas vagas · sem novo lote depois"
       }
     ],
     "dupla": {
@@ -335,7 +335,7 @@
     "headlinePost": "vem?",
     "bullets": [
       "30 dias de conteúdo. 3 horas. Lourdes, BH.",
-      "R$ 97 no Lote 3 · Última Chamada · 6 vagas finais",
+      "R$ 97 no Lote 3 · Última Chamada · últimas vagas",
       "Garantia: refaz junto OU dinheiro de volta. Você escolhe na hora."
     ],
     "ctaLabel": "Garantir minha vaga · R$ 97",
