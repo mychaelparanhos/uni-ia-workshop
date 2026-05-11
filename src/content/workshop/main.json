@@ -20,7 +20,7 @@
       "LOURDES · BH",
       "LOTE 2 · ATIVO AGORA"
     ],
-    "ctaLabel": "Garantir Vaga · de R$ 97 por R$ 67"
+    "ctaLabel": "Garantir Vaga · R$ 97 (Última Chamada)"
   },
   "provas": {
     "eyebrow": "prova social",
@@ -132,7 +132,7 @@
       "principal": "Não falta informação.\nFalta aplicação.",
       "complemento": "E aplicação não acontece em vídeo. Acontece com gente do lado, na SUA tela, na hora."
     },
-    "fechamento": "Workshop UNI IA é o único formato em BH onde você produz no SEU cliente real, com correção ao vivo, em uma única noite — por R$ 67 no 2º lote.",
+    "fechamento": "Workshop UNI IA é o único formato em BH onde você produz no SEU cliente real, com correção ao vivo, em uma única noite — por R$ 97 no Lote 3 (Última Chamada).",
     "ctaLabel": "Garanta sua vaga →"
   },
   "paraQuem": {
@@ -160,17 +160,17 @@
       "Esquadrão UNI IA · grupo dos formados, sem voltar pra solidão · R$ 80"
     ],
     "ancoragem": "Tudo isso somado vale R$ 980 no mercado real.",
-    "ancoragemPos": "No Lote 2 do Workshop UNI IA — só 7 vagas — você leva tudo por R$ 67. O Lote 1 já esgotou."
+    "ancoragemPos": "No Lote 3 (Última Chamada) — só 6 vagas — você leva tudo por R$ 97. Lotes 1 e 2 já esgotaram. Não tem novo lote depois."
   },
   "preco": {
     "eyebrow": "preço · lotes · dupla",
     "headlinePre": "R$ 980 no mercado.",
-    "accent": "R$ 67",
-    "headlinePost": "no Lote 2.",
+    "accent": "R$ 97",
+    "headlinePost": "no Lote 3 (Última Chamada).",
     "ancoragem": [
       { "curso": "FGV — 64h online genérico", "valor": "R$ 4.877", "entrega": "Informação sem aplicação" },
       { "curso": "Hotmart — cursos online de IA", "valor": "R$ 1.997 a R$ 3.500", "entrega": "Gravado, sem correção, sem garantia" },
-      { "curso": "Workshop UNI IA — 3h presencial em BH", "valor": "R$ 67 (Lote 2)", "entrega": "30 dias do seu cliente real, com correção ao vivo", "destaque": true }
+      { "curso": "Workshop UNI IA — 3h presencial em BH", "valor": "R$ 97 (Lote 3)", "entrega": "30 dias do seu cliente real, com correção ao vivo", "destaque": true }
     ],
     "lotes": [
       {
@@ -194,8 +194,8 @@
         "preco_individual_str": "R$ 67",
         "preco_dupla_str": "R$ 100",
         "preco_cada_str": "R$ 50 cada",
-        "status_default": "ativo",
-        "legenda": "Ativo agora · vagas limitadas"
+        "status_default": "esgotado",
+        "legenda": "Esgotado · segunda turma"
       },
       {
         "numero": 3,
@@ -206,17 +206,17 @@
         "preco_individual_str": "R$ 97",
         "preco_dupla_str": "R$ 145",
         "preco_cada_str": "R$ 72,50 cada",
-        "status_default": "aguardando",
+        "status_default": "ativo",
         "legenda": "Últimas 6 vagas · sem novo lote depois"
       }
     ],
     "dupla": {
       "titulo": "Vem com uma colega? A segunda pessoa entra pela metade do preço.",
       "explicacao": "Não é desconto. É forma de chegar acompanhado(a) — quem chama paga o valor cheio do lote, e a segunda pessoa entra por metade do valor.",
-      "legenda": "No Lote 2: você paga R$ 67, a colega paga R$ 33. Total R$ 100.",
+      "legenda": "No Lote 3: você paga R$ 97, a colega paga R$ 48,50. Total R$ 145,50.",
       "ctaLabel": "Quero a vaga em dupla"
     },
-    "ctaLabel": "Garantir minha vaga · R$ 67"
+    "ctaLabel": "Garantir minha vaga · R$ 97"
   },
   "doisCaminhos": {
     "eyebrow": "dois caminhos",
@@ -225,7 +225,7 @@
     "accent": "chave",
     "bulletNeg": "Se você não tomar uma decisão agora, em 6 meses você ainda tá salvando post sobre IA, aplicando 5%, e segunda de manhã ainda tem aperto no peito.",
     "bulletPos": "Se você agir agora, na próxima terça você sai com 30 dias prontos pra publicar — e o problema do calendário travado nunca mais é seu.",
-    "ctaLabel": "Decidir agora · R$ 67"
+    "ctaLabel": "Decidir agora · R$ 97"
   },
   "autoridade": {
     "eyebrow": "autoridade",
@@ -335,10 +335,10 @@
     "headlinePost": "vem?",
     "bullets": [
       "30 dias de conteúdo. 3 horas. Lourdes, BH.",
-      "R$ 67 no Lote 2 (7 vagas) · R$ 100 em dupla",
+      "R$ 97 no Lote 3 · Última Chamada · 6 vagas finais",
       "Garantia: refaz junto OU dinheiro de volta. Você escolhe na hora."
     ],
-    "ctaLabel": "Garantir minha vaga · R$ 67",
+    "ctaLabel": "Garantir minha vaga · R$ 97",
     "tagline": "Pare de estudar IA.",
     "taglineAccent": "Execute",
     "taglineSub": "Saber é o começo. Aplicar é a virada."
